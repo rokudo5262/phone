@@ -9,18 +9,25 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Categories](
-	[category_id] [nvarchar](255) NOT NULL,
+	[category_id] [int] IDENTITY(1,1) not null PRIMARY KEY,
 	[category_name] [nvarchar](255) NULL,
 	[deleted] [bit] NULL,
+  [status][nvarchar](255) NULL,
+	[remark][nvarchar](255) NULL,
 	[updatedby] [nvarchar](255) NULL,
 	[createdBy] [nvarchar](255) NULL,
 	[updatedDateTime] [datetime] NULL,
 	[createdDateTime] [datetime] NULL,
- CONSTRAINT [PK_Category] PRIMARY KEY CLUSTERED 
-(
-	[category_id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+);
+
+INSERT INTO [Categories]( category_name,deleted)
+   VALUES
+   (N'Điện Thoại','0'),
+   (N'Laptop','0'),
+   (N'Tablet','0'),
+   (N'Tai Nghe','0');
+
+ALTER TABLE [dbo].[Categories] ADD  CONSTRAINT [DF_Catagories_deleted]  DEFAULT ((0)) FOR [deleted]
 GO
 
 
