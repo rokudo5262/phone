@@ -32,3 +32,18 @@ INSERT INTO [Orders]( customer_id,store_id,staff_id,deleted)
 
 ALTER TABLE [dbo].[Orders] ADD  CONSTRAINT [DF_Orders_deleted]  DEFAULT ((0)) FOR [deleted]
 GO
+
+ALTER TABLE [dbo].[Orders]  WITH CHECK ADD  CONSTRAINT [FK_Orders_Customers] FOREIGN KEY([customer_id])
+REFERENCES [dbo].[Customers] ([customer_id])
+GO
+
+ALTER TABLE [dbo].[Orders] CHECK CONSTRAINT [FK_Orders_Customers]
+GO
+
+ALTER TABLE [dbo].[Orders]  WITH CHECK ADD  CONSTRAINT [FK_Orders_Staffs] FOREIGN KEY([staff_id])
+REFERENCES [dbo].[Staffs] ([staff_id])
+GO
+
+ALTER TABLE [dbo].[Orders] CHECK CONSTRAINT [FK_Orders_Staffs]
+GO
+

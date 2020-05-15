@@ -32,3 +32,19 @@ INSERT INTO [OrderItems]( order_id,product_id,quantity,deleted)
 
 ALTER TABLE [dbo].[OrderItems] ADD  CONSTRAINT [DF_OrderItems_deleted]  DEFAULT ((0)) FOR [deleted]
 GO
+ALTER TABLE [dbo].[OrderItems] ADD  CONSTRAINT [DF_OrderItems_deleted]  DEFAULT ((0)) FOR [deleted]
+GO
+
+ALTER TABLE [dbo].[OrderItems]  WITH CHECK ADD  CONSTRAINT [FK_OrderItems_Orders] FOREIGN KEY([order_id])
+REFERENCES [dbo].[Orders] ([order_id])
+GO
+
+ALTER TABLE [dbo].[OrderItems] CHECK CONSTRAINT [FK_OrderItems_Orders]
+GO
+
+ALTER TABLE [dbo].[OrderItems]  WITH CHECK ADD  CONSTRAINT [FK_OrderItems_Products] FOREIGN KEY([product_id])
+REFERENCES [dbo].[Products] ([product_id])
+GO
+
+ALTER TABLE [dbo].[OrderItems] CHECK CONSTRAINT [FK_OrderItems_Products]
+GO

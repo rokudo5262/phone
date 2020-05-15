@@ -37,14 +37,17 @@ CREATE TABLE [dbo].[Customers](
 	[createdDateTime] [datetime] NULL,
 );
 
-INSERT INTO [Customers]( firstname,middlename,lastname,email,password,gender,deleted)
+INSERT INTO [Customers]( firstname,middlename,lastname,gender,email,password,status,deleted)
    VALUES
-   (N'Trịnh' ,N'Quang',N'Trường','male'  ,'truong','12345','0'),
-   (N'Lê'    ,N'Văn'  ,N'A'     ,'female','a'     ,'12345','0'),
-   (N'Nguyễn',N'Thị'  ,N'C'     ,'female','c'     ,'12345','0'),
-   (N'Lê'    ,N'Thị'  ,N'E'     ,'female','a'     ,'12345','0'),
-   (N'Nguyễn',N'Văn'  ,N'B'     ,'male'  ,'b'     ,'12345','0'),
-   (N'Trần'  ,N'Văn'  ,N'D'     ,'male'  ,'d'     ,'12345','0');
+   (N'Trịnh' ,N'Văn'  ,N'A','male'  ,'a@gmail.com' ,'123456789','Active','0'),
+   (N'Lê'    ,N'Văn'  ,N'B','female','b@gmail.com','123456789','Active','0'),
+   (N'Nguyễn',N'Thị'  ,N'C','female','c@gmail.com','123456789','Active','0'),
+   (N'Lê'    ,N'Thị'  ,N'D','female','d@gmail.com' ,'123456789','Active','0'),
+   (N'Nguyễn',N'Văn'  ,N'E','male'  ,'e@gmail.com' ,'123456789','Active','0'),
+   (N'Trần'  ,N'Văn'  ,N'F','male'  ,'f@gmail.com' ,'123456789','Active','0'),
+   (N'Lê'    ,N'Thị'  ,N'G','female','g@gmail.com' ,'123456789','Active','0'),
+   (N'Nguyễn',N'Thị'  ,N'H','female','h@gmail.com' ,'123456789','Active','0'),
+   (N'Trần'  ,N'Thị'  ,N'K','female','i@gmail.com','123456789','Active','0');
    
 
 ALTER TABLE [dbo].[Customers] ADD  CONSTRAINT [DF_Customers_deleted]  DEFAULT ((0)) FOR [deleted]

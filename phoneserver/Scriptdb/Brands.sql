@@ -37,3 +37,19 @@ INSERT INTO [Brands]( brand_name,deleted)
 
 ALTER TABLE [dbo].[Categories] ADD  CONSTRAINT [DF_Catagories_deleted]  DEFAULT ((0)) FOR [deleted]
 GO
+
+ALTER TABLE [dbo].[Stocks] ADD  CONSTRAINT [DF_stocks_deleted]  DEFAULT ((0)) FOR [deleted]
+GO
+
+ALTER TABLE [dbo].[Stocks]  WITH CHECK ADD  CONSTRAINT [FK_Stocks_Products] FOREIGN KEY([product_id])
+REFERENCES [dbo].[Products] ([product_id])
+GO
+
+ALTER TABLE [dbo].[Stocks] CHECK CONSTRAINT [FK_Stocks_Products]
+GO
+
+ALTER TABLE [dbo].[Stocks]  WITH CHECK ADD  CONSTRAINT [FK_Stocks_Stores] FOREIGN KEY([store_id])
+REFERENCES [dbo].[Stores] ([store_id])
+GO
+
+ALTER TABLE [dbo].[Stocks] CHECK CONSTRAINT [FK_Stocks_Stores]
