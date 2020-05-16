@@ -18,8 +18,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NbAuthModule } from '@nebular/auth';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { ProductsComponent } from './products.component';
-import { ProductsRoutingModule } from './products-routing.module';
+import { StoresComponent } from './stores.component';
+import { StoresRoutingModule } from './stores-routing.module';
+
 @NgModule({
     imports: [
         NbTreeGridModule,
@@ -42,15 +43,15 @@ import { ProductsRoutingModule } from './products-routing.module';
         CommonModule,
         Ng2SmartTableModule,
         // -------------------------------------------------------------
-        ProductsRoutingModule,
+        StoresRoutingModule,
     ],
     declarations: [
-        ProductsComponent,
+        StoresComponent,
     ],
     entryComponents: [
     ],
     providers: [
     ],
 })
-export class ProductsModule {
+export class StoresModule {
 }

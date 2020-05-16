@@ -15,6 +15,41 @@ const routes: Routes = [{
       component: ECommerceComponent,
     },
     {
+      path: 'brands',
+      loadChildren: () => import('./brands/brands.module')
+        .then(m => m.BrandsModule),
+    },
+    {
+      path: 'categories',
+      loadChildren: () => import('./categories/categories.module')
+        .then(m => m.CategoriesModule),
+    },
+    {
+      path: 'customers',
+      loadChildren: () => import('./customers/customers.module')
+        .then(m => m.CustomersModule),
+    },
+    {
+      path: 'orders',
+      loadChildren: () => import('./orders/orders.module')
+        .then(m => m.OrdersModule),
+    },
+    {
+      path: 'products',
+      loadChildren: () => import('./products/products.module')
+        .then(m => m.ProductsModule),
+    },
+    {
+      path: 'staffs',
+      loadChildren: () => import('./staffs/staffs.module')
+        .then(m => m.StaffsModule),
+    },
+    {
+      path: 'stores',
+      loadChildren: () => import('./stores/stores.module')
+        .then(m => m.StoresModule),
+    },
+    {
       path: 'iot-dashboard',
       component: DashboardComponent,
     },
