@@ -6,7 +6,7 @@
     "trailing-comma": [
       true,
       {
-        "no-console": false,
+        
         "multiline": "always",
         "singleline": "never"
       }
@@ -37,7 +37,7 @@
     "member-access": false,
     "no-arg": true,
     "no-console": [
-      true,
+      false,
       "debug",
       "log",
       "time",
