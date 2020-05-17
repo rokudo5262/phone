@@ -20,8 +20,15 @@ import { NbAuthModule } from '@nebular/auth';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { BrandsComponent } from './brands.component';
 import { BrandsRoutingModule } from './brands-routing.module';
+import { BrandsPageComponent } from './containers/brands-page/brands-page.component';
+import { environment } from '../../../environments/environment.prod';
+import { StoreModule } from '@ngrx/store';
+import { FeatureKey } from './reducers';
+import { reducer } from './reducers/brands.reducer';
+import { BrandsEffect } from './effects/brands.effect';
 @NgModule({
     imports: [
+        // -------------------------------------------------------------
         NbTreeGridModule,
         NbAuthModule,
         NbDialogModule.forChild(),
@@ -40,12 +47,24 @@ import { BrandsRoutingModule } from './brands-routing.module';
         FormsModule,
         RouterModule,
         CommonModule,
+        // -------------------------------------------------------------
         Ng2SmartTableModule,
         // -------------------------------------------------------------
         BrandsRoutingModule,
+        // -------------------------------------------------------------
+        StoreDevtoolsModule.instrument({
+            maxAge: 25,
+            logOnly: environment.production,
+        }),
+        // -------------------------------------------------------------
+        StoreModule.forFeature(FeatureKey, reducer),
+        // -------------------------------------------------------------
+        EffectsModule.forRoot([BrandsEffect]),
+        // -------------------------------------------------------------
     ],
     declarations: [
         BrandsComponent,
+        BrandsPageComponent,
     ],
     entryComponents: [
     ],

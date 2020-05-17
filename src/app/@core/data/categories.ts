@@ -1,6 +1,8 @@
 export interface ICategory {
     category_id: number;
-    categoryname: string;
+    category_name: string;
+    status: string;
+    remark: string;
     deleted: boolean;
     createdBy?: string;
     createdDateTime?: Date;

@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrandsComponent } from './brands.component';
+import { BrandsPageComponent } from './containers/brands-page/brands-page.component';
 const routes: Routes = [{
   path: '',
   component: BrandsComponent,
   children: [
-    // { path: 'library', component: BrandsComponent },
+    { path: 'library', component: BrandsPageComponent },
   ],
 }];
 @NgModule({

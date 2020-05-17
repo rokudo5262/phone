@@ -1,5 +1,5 @@
-export interface IStaff {
-    staff_id: number;
+export interface IOrder {
+    order_id: number;
     deleted: boolean;
     createdBy?: string;
     createdDateTime?: Date;

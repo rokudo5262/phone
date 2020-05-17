@@ -19,7 +19,9 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbDialogService,
 } from '@nebular/theme';
+import { environment } from '../environments/environment.prod';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,8 +41,18 @@ import {
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
   ],
-  bootstrap: [AppComponent],
+  providers: [
+    NbDialogService,
+  ],
+  bootstrap: [
+    AppComponent,
+  ],
 })
 export class AppModule {
 }
