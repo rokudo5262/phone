@@ -15,7 +15,7 @@ export const {
   selectTotal: selectTotalBrands,
 } = brandAdapter.getSelectors(selectBrandEntitiesState);
 
-export const RoomGroupSelectors = {
+export const BrandSelectors = {
   selectBrandEntitiesState,
   selectBrandIds,
   selectBrandEntities,
@@ -24,5 +24,5 @@ export const RoomGroupSelectors = {
 };
 export const selectCurrentBrand = (brand_id) => createSelector(
   selectBrandEntities,
-  (brand) => brand[brand_id]
+  (brand) => brand[brand_id],
 );

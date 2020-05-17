@@ -51,7 +51,7 @@ export class BrandsEffect {
             )),
     ));
     remove$ = createEffect(() => this.action$.pipe(
-        ofType(BrandsActions.deleteBrand),
+        ofType(BrandsActions.removeBrand),
         switchMap(({ brand_id }) => {
             if (brand_id <= 0) {
                 return empty;

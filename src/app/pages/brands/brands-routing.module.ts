@@ -7,6 +7,7 @@ const routes: Routes = [{
   component: BrandsComponent,
   children: [
     { path: 'library', component: BrandsPageComponent },
+    { path: '', redirectTo: 'library', pathMatch: 'full' },
   ],
 }];
 @NgModule({

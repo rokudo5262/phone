@@ -24,8 +24,8 @@ export class BrandsService {
     load_brands(): Observable<IBrand[]> {
         return this.http.get<IBrand[]>(this.API_PATH, this.options);
     }
-    add_brand(roomgroup: IBrand) {
-        return this.http.post<IBrand>(this.API_PATH, roomgroup, this.options);
+    add_brand(brand: IBrand) {
+        return this.http.post<IBrand>(this.API_PATH, brand, this.options);
     }
     update_brand(changes: Partial<IBrand>) {
         return this.http.put<IBrand>(this.API_PATH + '/' + changes.brand_id, changes, this.options);

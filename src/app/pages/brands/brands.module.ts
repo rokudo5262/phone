@@ -21,11 +21,15 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { BrandsComponent } from './brands.component';
 import { BrandsRoutingModule } from './brands-routing.module';
 import { BrandsPageComponent } from './containers/brands-page/brands-page.component';
-import { environment } from '../../../environments/environment.prod';
 import { StoreModule } from '@ngrx/store';
 import { FeatureKey } from './reducers';
 import { reducer } from './reducers/brands.reducer';
 import { BrandsEffect } from './effects/brands.effect';
+import { EffectsModule } from '@ngrx/effects';
+import { BrandsSmartTableComponent } from './components/brands-smart-table/brands-smart-table.component';
+import { BrandsAddComponent } from './components/brands-add/brands-add.component';
+import { BrandsDetailComponent } from './containers/brands-detail/brands-detail.component';
+import { BrandsUpdateComponent } from './components/brands-update/brands-update.component';
 @NgModule({
     imports: [
         // -------------------------------------------------------------
@@ -52,21 +56,22 @@ import { BrandsEffect } from './effects/brands.effect';
         // -------------------------------------------------------------
         BrandsRoutingModule,
         // -------------------------------------------------------------
-        StoreDevtoolsModule.instrument({
-            maxAge: 25,
-            logOnly: environment.production,
-        }),
-        // -------------------------------------------------------------
         StoreModule.forFeature(FeatureKey, reducer),
         // -------------------------------------------------------------
-        EffectsModule.forRoot([BrandsEffect]),
+        EffectsModule.forFeature([BrandsEffect]),
         // -------------------------------------------------------------
     ],
     declarations: [
         BrandsComponent,
         BrandsPageComponent,
+        BrandsSmartTableComponent,
+        BrandsAddComponent,
+        BrandsDetailComponent,
+        BrandsUpdateComponent,
     ],
     entryComponents: [
+        BrandsAddComponent,
+        BrandsUpdateComponent,
     ],
     providers: [
     ],

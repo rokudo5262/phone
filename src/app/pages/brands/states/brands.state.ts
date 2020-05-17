@@ -1,5 +1,5 @@
-import { EntityState, createEntityAdapter, EntityAdapter } from '@ngrx/entity';
-import { IBrand } from '../../../@core/data';
+import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
+import { IBrand } from '../../../@core/data/brands';
 
 export interface BrandsState extends EntityState<IBrand> {
     selectedBrandID: number | string | null;
@@ -12,6 +12,8 @@ export const brandAdapter: EntityAdapter<IBrand> = createEntityAdapter<IBrand>({
 export const brandInitialState: BrandsState = brandAdapter.getInitialState({
     selectedBrandID: null,
     entities: {
-        0: {},
+        brand_id: {
+            brand_id:'0',
+        },
     },
 });

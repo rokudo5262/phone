@@ -21,7 +21,8 @@ import {
   NbWindowModule,
   NbDialogService,
 } from '@nebular/theme';
-import { environment } from '../environments/environment.prod';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,10 +43,7 @@ import { environment } from '../environments/environment.prod';
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25, // Retains last 25 states
-      logOnly: environment.production, // Restrict extension to log-only mode
-    }),
+    StoreModule.forRoot([]),
   ],
   providers: [
     NbDialogService,

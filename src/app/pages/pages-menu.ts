@@ -2,38 +2,38 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
+    title: 'Brand',
+    icon: 'pricetags-outline',
+    link: '/pages/brands',
+  },
+  {
     title: 'Product',
-    icon: 'shopping-cart-outline',
+    icon: 'gift-outline',
     link: '/pages/products',
   },
   {
     title: 'Staff',
-    icon: 'shopping-cart-outline',
+    icon: 'people-outline',
     link: '/pages/staffs',
   },
   {
     title: 'Customer',
-    icon: 'shopping-cart-outline',
+    icon: 'person-outline',
     link: '/pages/customers',
   },
   {
-    title: 'Brand',
-    icon: 'shopping-cart-outline',
-    link: '/pages/brands',
-  },
-  {
     title: 'Category',
-    icon: 'shopping-cart-outline',
+    icon: 'folder-outline',
     link: '/pages/categories',
   },
   {
     title: 'Order',
-    icon: 'shopping-cart-outline',
+    icon: 'car-outline',
     link: '/pages/orders',
   },
   {
     title: 'Store',
-    icon: 'shopping-cart-outline',
+    icon: 'home-outline',
     link: '/pages/stores',
   },
   {
@@ -44,7 +44,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'IoT Dashboard',
-    icon: 'home-outline',
+    icon: 'home',
     link: '/pages/iot-dashboard',
   },
   {
