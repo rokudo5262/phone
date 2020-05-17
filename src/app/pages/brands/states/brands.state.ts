@@ -12,8 +12,11 @@ export const brandAdapter: EntityAdapter<IBrand> = createEntityAdapter<IBrand>({
 export const brandInitialState: BrandsState = brandAdapter.getInitialState({
     selectedBrandID: null,
     entities: {
-        brand_id: {
+        0: {
             brand_id:'0',
+            brand_name:'name',
+            status:'',
         },
     },
+    ids:[1],
 });
