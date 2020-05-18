@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { mergeMap, catchError, map, switchMap } from 'rxjs/operators';
-import { of } from 'rxjs/internal/observable/of';
-import { empty } from 'rxjs/internal/observable/empty';
 import { BrandsActions, BrandssApiActions } from '../actions';
 import { IBrand } from '../../../@core/data';
 import { BrandsService } from '../services';
+import { empty, of } from 'rxjs';
 
 @Injectable()
 export class BrandsEffect {

@@ -17,9 +17,20 @@ import {
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NbAuthModule } from '@nebular/auth';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CookieService } from 'ngx-cookie-service';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { StoreModule } from '@ngrx/store';
+import { FeatureKey, reducer } from './reducers';
+import { ThemeModule } from '../../@theme/theme.module';
+import { environment } from '../../../environments/environment';
 import { CategoriesComponent } from './categories.component';
 import { CategoriesRoutingModule } from './categories-routing.module';
+import { CategoriesPageComponent } from './containers';
+import { CategoriesSmartTableComponent } from './components/categories-smart-table/categories-smart-table.component';
+import { CategoriesEffects } from './effects';
+
 @NgModule({
     imports: [
         NbTreeGridModule,
@@ -38,18 +49,33 @@ import { CategoriesRoutingModule } from './categories-routing.module';
         // -------------------------------------------------------------
         ReactiveFormsModule,
         FormsModule,
+        ThemeModule,
         RouterModule,
+        CategoriesRoutingModule,
         CommonModule,
+        // -------------------------------------------------------------
+        StoreDevtoolsModule.instrument({
+            maxAge: 25,
+            logOnly: environment.production
+        }),
+        // -------------------------------------------------------------
+        StoreModule.forFeature(FeatureKey, reducer),
+        // -------------------------------------------------------------
+        EffectsModule.forFeature([CategoriesEffects]),
+        // -------------------------------------------------------------
         Ng2SmartTableModule,
         // -------------------------------------------------------------
-        CategoriesRoutingModule,
     ],
     declarations: [
         CategoriesComponent,
+        CategoriesPageComponent,
+        CategoriesSmartTableComponent,
     ],
     entryComponents: [
+
     ],
     providers: [
+        CookieService,
     ],
 })
 export class CategoriesModule {

@@ -22,14 +22,17 @@ import { BrandsComponent } from './brands.component';
 import { BrandsRoutingModule } from './brands-routing.module';
 import { BrandsPageComponent } from './containers/brands-page/brands-page.component';
 import { StoreModule } from '@ngrx/store';
-import { FeatureKey } from './reducers';
-import { reducer } from './reducers/brands.reducer';
+import { FeatureKey, reducer } from './reducers';
 import { BrandsEffect } from './effects/brands.effect';
 import { EffectsModule } from '@ngrx/effects';
 import { BrandsSmartTableComponent } from './components/brands-smart-table/brands-smart-table.component';
 import { BrandsAddComponent } from './components/brands-add/brands-add.component';
 import { BrandsDetailComponent } from './containers/brands-detail/brands-detail.component';
 import { BrandsUpdateComponent } from './components/brands-update/brands-update.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../../../environments/environment';
+import { CookieService } from 'ngx-cookie-service';
+
 @NgModule({
     imports: [
         // -------------------------------------------------------------
@@ -60,6 +63,11 @@ import { BrandsUpdateComponent } from './components/brands-update/brands-update.
         // -------------------------------------------------------------
         EffectsModule.forFeature([BrandsEffect]),
         // -------------------------------------------------------------
+        StoreDevtoolsModule.instrument({
+            maxAge: 25,
+            logOnly: environment.production
+        }),
+        // -------------------------------------------------------------
     ],
     declarations: [
         BrandsComponent,
@@ -74,6 +82,7 @@ import { BrandsUpdateComponent } from './components/brands-update/brands-update.
         BrandsUpdateComponent,
     ],
     providers: [
+        CookieService,
     ],
 })
 export class BrandsModule {
