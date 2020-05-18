@@ -24,5 +24,5 @@ export const CategoriesSelector = {
 };
 export const selectCurrentCategory = (category_id) => createSelector(
   selectCategoryEntities,
-  (category) => category[category_id]
+  (category) => category[category_id],
 );

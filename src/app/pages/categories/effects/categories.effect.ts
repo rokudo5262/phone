@@ -15,8 +15,8 @@ export class CategoriesEffects {
                 map((items: ICategory[]) => CategoriesApiActions
                     .loadCategoriesSuccess({ categories: items })),
                 catchError(err => of(CategoriesApiActions
-                    .loadCategoriesFailure({ errorMsg: err.message })))
-            ))
+                    .loadCategoriesFailure({ errorMsg: err.message }))),
+            )),
     ));
     add$ = createEffect(() => this.action$.pipe(
         ofType(CategoriesActions.addCategory),
@@ -25,8 +25,8 @@ export class CategoriesEffects {
                 map((item: ICategory) => CategoriesApiActions
                     .addCategorySuccess({ category: item })),
                 catchError(error => of(CategoriesApiActions
-                    .addCategoryFailure({ errorMsg: error.message })))
-            ))
+                    .addCategoryFailure({ errorMsg: error.message }))),
+            )),
     ));
     update$ = createEffect(() => this.action$.pipe(
         ofType(CategoriesActions.updateCategory),
@@ -35,8 +35,8 @@ export class CategoriesEffects {
                 map(item => CategoriesApiActions
                     .updateCategorySuccess()),
                 catchError(error => of(CategoriesApiActions
-                    .updateCategoryFailure({ errorMsg: error.message })))
-            ))
+                    .updateCategoryFailure({ errorMsg: error.message }))),
+            )),
     ));
     delete$ = createEffect(() => this.action$.pipe(
         ofType(CategoriesActions.deleteCategory),
@@ -45,8 +45,8 @@ export class CategoriesEffects {
                 map(item => CategoriesApiActions
                     .deleteCategorySuccess()),
                 catchError(error => of(CategoriesApiActions
-                    .deleteCategoryFailure({ errorMsg: error.message })))
-            ))
+                    .deleteCategoryFailure({ errorMsg: error.message }))),
+            )),
     ));
     remove$ = createEffect(() => this.action$.pipe(
         ofType(CategoriesActions.removeCategory),
@@ -58,9 +58,9 @@ export class CategoriesEffects {
                 map((item: ICategory) => CategoriesApiActions
                     .removeCategorySuccess({ category_id: item ? item.category_id : 0 })),
                 catchError(err => of(CategoriesApiActions
-                    .removeCategoryFailure({ errorMsg: err.message })))
+                    .removeCategoryFailure({ errorMsg: err.message }))),
             );
-        })
+        }),
     ));
     constructor(
         private action$: Actions,

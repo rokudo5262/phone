@@ -8,7 +8,7 @@ const routes: Routes = [{
   component: BrandsComponent,
   children: [
     { path: 'library', component: BrandsPageComponent },
-    { path: 'brand/:brand_id',component: BrandsDetailComponent },
+    { path: 'brand/:brand_id', component: BrandsDetailComponent },
     { path: '', redirectTo: 'library', pathMatch: 'full' },
   ],
 }];

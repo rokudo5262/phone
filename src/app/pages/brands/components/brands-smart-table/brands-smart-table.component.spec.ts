@@ -8,7 +8,7 @@ describe('BrandsSmartTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BrandsSmartTableComponent ]
+      declarations: [ BrandsSmartTableComponent ],
     })
     .compileComponents();
   }));

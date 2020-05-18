@@ -15,7 +15,7 @@ export class BrandsDetailComponent implements OnInit {
   brand_id$: number;
   constructor(
     private router: ActivatedRoute,
-    private store: Store<IBrand>
+    private store: Store<IBrand>,
   ) {
     this.brand_id$ = +this.router.snapshot.params.brand_id;
     this.brand$ = this.store.pipe(select(BrandsSelector.selectCurrentBrand(this.brand_id$)));

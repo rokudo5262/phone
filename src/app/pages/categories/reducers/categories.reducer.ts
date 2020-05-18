@@ -12,7 +12,7 @@ export const reducer = createReducer(
         (state, { categories }) => {
             categories = categories.filter(x => x.deleted === false);
             return categoryAdapter.addMany(categories, state);
-        }
+        },
     ),
     on(
         CategoriesActions.addCategory,

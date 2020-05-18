@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { NbDialogService } from '@nebular/theme';
 import { ICategory } from '../../../../@core/data';
 import { CategoriesSelector } from '../../selectors/categories.selector';
 import { CategoriesActions } from '../../actions';
@@ -48,7 +46,7 @@ export class CategoriesSmartTableComponent implements OnInit {
       add: false,
       delete: false,
       edit: false,
-    }
+    },
   };
   categories$: Observable<ICategory[]>;
   dialogRef: any;

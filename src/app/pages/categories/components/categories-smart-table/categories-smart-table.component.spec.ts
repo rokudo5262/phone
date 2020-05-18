@@ -7,7 +7,7 @@ describe('CategoriesSmartTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CategoriesSmartTableComponent ]
+      declarations: [ CategoriesSmartTableComponent ],
     })
     .compileComponents();
   }));

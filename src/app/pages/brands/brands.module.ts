@@ -65,7 +65,7 @@ import { CookieService } from 'ngx-cookie-service';
         // -------------------------------------------------------------
         StoreDevtoolsModule.instrument({
             maxAge: 25,
-            logOnly: environment.production
+            logOnly: environment.production,
         }),
         // -------------------------------------------------------------
     ],

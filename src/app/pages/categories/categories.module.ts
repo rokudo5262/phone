@@ -56,7 +56,7 @@ import { CategoriesEffects } from './effects';
         // -------------------------------------------------------------
         StoreDevtoolsModule.instrument({
             maxAge: 25,
-            logOnly: environment.production
+            logOnly: environment.production,
         }),
         // -------------------------------------------------------------
         StoreModule.forFeature(FeatureKey, reducer),
