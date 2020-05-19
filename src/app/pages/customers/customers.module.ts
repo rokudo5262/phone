@@ -26,6 +26,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StaffsEffect } from '../staffs/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../../environments/environment';
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
     imports: [
         NbTreeGridModule,
@@ -66,6 +67,7 @@ import { environment } from '../../../environments/environment';
     entryComponents: [
     ],
     providers: [
+        CookieService,
     ],
 })
 export class CustomersModule {

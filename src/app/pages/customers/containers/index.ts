@@ -1,5 +1,5 @@
-import { BrandsPageComponent } from './brands-page/brands-page.component';
-import { BrandsDetailComponent } from './brands-detail/brands-detail.component';
+import { BrandsPageComponent } from './customers-page/brands-page.component';
+import { BrandsDetailComponent } from './customers-detail/brands-detail.component';
 
 export {
     BrandsPageComponent,
