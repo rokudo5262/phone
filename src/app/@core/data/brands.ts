@@ -1,6 +1,6 @@
 export interface IBrand {
-    brand_id: number;
-    brand_name: string;
+    brandId: number;
+    brandName: string;
     status: string;
     remark: string;
     deleted: boolean;

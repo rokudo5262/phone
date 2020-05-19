@@ -1,6 +1,6 @@
 export interface ICategory {
-    category_id: number;
-    category_name: string;
+    categoryId: number;
+    categoryName: string;
     status: string;
     remark: string;
     deleted: boolean;

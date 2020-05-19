@@ -28,12 +28,12 @@ export class BrandsService {
         return this.http.post<IBrand>(this.API_PATH, brand, this.options);
     }
     update_brand(changes: Partial<IBrand>) {
-        return this.http.put<IBrand>(this.API_PATH + '/' + changes.brand_id, changes, this.options);
+        return this.http.put<IBrand>(this.API_PATH + '/' + changes.brandId, changes, this.options);
     }
     delete_brand(changes: Partial<IBrand>) {
-        return this.http.put<IBrand>(this.API_PATH + '/' + changes.brand_id, changes, this.options);
+        return this.http.put<IBrand>(this.API_PATH + '/' + changes.brandId, changes, this.options);
     }
-    remove_brand(brand_id: number) {
-        return this.http.delete<IBrand>(this.API_PATH + '/' + brand_id, this.options);
+    remove_brand(brandid: number) {
+        return this.http.delete<IBrand>(this.API_PATH + '/' + brandid, this.options);
     }
 }

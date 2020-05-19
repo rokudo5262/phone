@@ -57,7 +57,7 @@ export class BrandsEffect {
             }
             return this.bransService.remove_brand(brand_id).pipe(
                 map((item: IBrand) =>
-                    BrandssApiActions.removeBrandSuccess({ brand_id: item ? item.brand_id : 0 })),
+                    BrandssApiActions.removeBrandSuccess({ brand_id: item ? item.brandId : 0 })),
                 catchError(err => of(
                     BrandssApiActions.removeBrandFailure({ errorMsg: err.message }))),
             );

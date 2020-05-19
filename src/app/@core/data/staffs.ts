@@ -1,5 +1,5 @@
 export interface IStaff {
-    staff_id: number;
+    staffId: number;
     deleted: boolean;
     createdBy?: string;
     createdDateTime?: Date;

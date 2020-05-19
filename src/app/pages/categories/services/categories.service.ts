@@ -27,12 +27,12 @@ export class CategoriesService {
     return this.http.post<ICategory>(this.API_PATH, category, this.options);
   }
   update_category(changes: Partial<ICategory>) {
-    return this.http.put<ICategory>(this.API_PATH + '/' + changes.category_id, changes, this.options);
+    return this.http.put<ICategory>(this.API_PATH + '/' + changes.categoryId, changes, this.options);
   }
   delete_category(changes: Partial<ICategory>) {
-    return this.http.put<ICategory>(this.API_PATH + '/' + changes.category_id, changes, this.options);
+    return this.http.put<ICategory>(this.API_PATH + '/' + changes.categoryId, changes, this.options);
   }
-  remove_category(category_id: number) {
-    return this.http.delete<ICategory>(this.API_PATH + '/' + category_id, this.options);
+  remove_category(categoryId: number) {
+    return this.http.delete<ICategory>(this.API_PATH + '/' + categoryId, this.options);
   }
 }

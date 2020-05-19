@@ -5,7 +5,7 @@ export interface BrandsState extends EntityState<IBrand> {
     selectedBrandID: number | string | null;
 }
 export const brandAdapter: EntityAdapter<IBrand> = createEntityAdapter<IBrand>({
-    selectId: (brand: IBrand) => brand.brand_id,
+    selectId: (brand: IBrand) => brand.brandId,
     sortComparer: null,
 });
 

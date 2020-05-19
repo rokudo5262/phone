@@ -30,13 +30,13 @@ export class CategoriesSmartTableComponent implements OnInit {
       perPage: 20,
     },
     columns: {
-      category_id: {
+      categoryId: {
         title: 'Category Id',
         filter: true,
         type: 'number',
         editable: false,
       },
-      category_name: {
+      categoryName: {
         title: 'Category Name',
         type: 'string',
         editable: true,

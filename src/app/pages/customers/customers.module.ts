@@ -20,6 +20,12 @@ import { NbAuthModule } from '@nebular/auth';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { CustomersComponent } from './customers.component';
 import { CustomersRoutingModule } from './customers-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { FeatureKey, reducer } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { StaffsEffect } from '../staffs/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../../../environments/environment';
 @NgModule({
     imports: [
         NbTreeGridModule,
@@ -43,6 +49,16 @@ import { CustomersRoutingModule } from './customers-routing.module';
         Ng2SmartTableModule,
         // -------------------------------------------------------------
         CustomersRoutingModule,
+        // -------------------------------------------------------------
+        StoreModule.forFeature(FeatureKey, reducer),
+        // -------------------------------------------------------------
+        EffectsModule.forFeature([StaffsEffect]),
+        // -------------------------------------------------------------
+        StoreDevtoolsModule.instrument({
+            maxAge: 25,
+            logOnly: environment.production,
+        }),
+        // -------------------------------------------------------------
     ],
     declarations: [
         CustomersComponent,

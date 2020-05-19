@@ -5,7 +5,8 @@ const routes: Routes = [{
   path: '',
   component: CustomersComponent,
   children: [
-    // { path: 'library', component: CustomersComponent },
+    // { path: 'library', component: CustomersPageComponent },
+    { path: '', redirectTo: 'library', pathMatch: 'full' },
   ],
 }];
 @NgModule({

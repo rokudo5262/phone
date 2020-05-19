@@ -6,7 +6,7 @@ export interface CategoriesState extends EntityState<ICategory> {
 }
 
 export const categoryAdapter: EntityAdapter<ICategory> = createEntityAdapter<ICategory>({
-  selectId: (category: ICategory) => category.category_id,
+  selectId: (category: ICategory) => category.categoryId,
   sortComparer: null,
 });
 
