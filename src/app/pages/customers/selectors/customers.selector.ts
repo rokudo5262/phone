@@ -22,7 +22,7 @@ export const CustomersSelector = {
   selectAllCustomers,
   selectTotalCustomers,
 };
-export const selectCurrentBrand = (customerId) => createSelector(
+export const selectCurrentCustomer = (customerId) => createSelector(
   selectCustomerEntities,
   (customer) => customer[customerId],
 );

@@ -1,5 +1,5 @@
 export interface IOrder {
-    order_id: number;
+    orderId: number;
     deleted: boolean;
     createdBy?: string;
     createdDateTime?: Date;

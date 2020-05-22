@@ -1,7 +1,7 @@
-import { BrandsPageComponent } from './customers-page/brands-page.component';
-import { BrandsDetailComponent } from './customers-detail/brands-detail.component';
+import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
+import { CustomersPageComponent } from './customers-page/customers-page.component';
 
 export {
-    BrandsPageComponent,
-    BrandsDetailComponent,
+    CustomersPageComponent,
+    CustomersDetailComponent,
 };

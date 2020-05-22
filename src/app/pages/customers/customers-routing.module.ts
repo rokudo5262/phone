@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomersComponent } from './customers.component';
+import { CustomersPageComponent } from './containers/customers-page/customers-page.component';
 const routes: Routes = [{
   path: '',
   component: CustomersComponent,
   children: [
-    // { path: 'library', component: CustomersPageComponent },
+    { path: 'library', component: CustomersPageComponent },
     { path: '', redirectTo: 'library', pathMatch: 'full' },
   ],
 }];

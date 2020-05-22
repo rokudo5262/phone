@@ -1,5 +1,6 @@
 import * as CustomersReducer from './customers.reducer';
 import { combineReducers, Action } from '@ngrx/store';
+import { CustomersState } from '../states/customers.state';
 
 export {
     CustomersReducer,
@@ -12,6 +13,6 @@ export interface State {
 
 export function reducer(state: State | undefined, action: Action) {
     return combineReducers({
-        [CustomersReducer.CustomersReducer]: CustomersReducer.reducer,
+        [CustomersReducer.customersFeatureKey]: CustomersReducer.reducer,
     })(state, action);
 }

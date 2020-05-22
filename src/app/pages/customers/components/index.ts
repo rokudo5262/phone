@@ -1,9 +1,9 @@
-import { BrandsAddComponent } from './customers-add/brands-add.component';
-import { BrandsUpdateComponent } from './customers-update/brands-update.component';
-import { BrandsSmartTableComponent } from './customers-smart-table/brands-smart-table.component';
+import { CustomersAddComponent } from './customers-add/customers-add.component';
+import { CustomersUpdateComponent } from './customers-update/customers-update.component';
+import { CustomersSmartTableComponent } from './customers-smart-table/customers-smart-table.component';
 
 export {
-    BrandsAddComponent,
-    BrandsUpdateComponent,
-    BrandsSmartTableComponent,
+    CustomersAddComponent,
+    CustomersUpdateComponent,
+    CustomersSmartTableComponent,
 };

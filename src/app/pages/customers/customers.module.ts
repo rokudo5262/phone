@@ -27,6 +27,8 @@ import { StaffsEffect } from '../staffs/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../../environments/environment';
 import { CookieService } from 'ngx-cookie-service';
+import { CustomersPageComponent, CustomersDetailComponent } from './containers';
+import { CustomersAddComponent, CustomersUpdateComponent, CustomersSmartTableComponent } from './components';
 @NgModule({
     imports: [
         NbTreeGridModule,
@@ -63,8 +65,15 @@ import { CookieService } from 'ngx-cookie-service';
     ],
     declarations: [
         CustomersComponent,
+        CustomersPageComponent,
+        CustomersAddComponent,
+        CustomersUpdateComponent,
+        CustomersDetailComponent,
+        CustomersSmartTableComponent,
     ],
     entryComponents: [
+        CustomersAddComponent,
+        CustomersUpdateComponent,
     ],
     providers: [
         CookieService,
