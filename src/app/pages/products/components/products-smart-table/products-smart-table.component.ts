@@ -2,18 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { NbDialogService } from '@nebular/theme';
-import { OrdersAddComponent } from '../orders-add/orders-add.component';
 import { IOrder } from '../../../../@core/data/orders';
-import { OrdersSelector } from '../../selectors/orders.selector';
-import { OrdersActions } from '../../actions';
+import { ProductsSelector } from '../../selectors/products.selector';
+import { ProductsActions } from '../../actions';
+import { ProductsAddComponent } from '../products-add/products-add.component';
+import { IProduct } from '../../../../@core/data/products';
 
 @Component({
-  selector: 'ngx-orders-smart-table',
-  templateUrl: './orders-smart-table.component.html',
-  styleUrls: ['./orders-smart-table.component.scss'],
+  selector: 'ngx-products-smart-table',
+  templateUrl: './products-smart-table.component.html',
+  styleUrls: ['./products-smart-table.component.scss'],
 
 })
-export class OrdersSmartTableComponent implements OnInit {
+export class ProductsSmartTableComponent implements OnInit {
   settings = {
     hideSubHeader: false,
     // selectMode: 'multi',
@@ -32,19 +33,14 @@ export class OrdersSmartTableComponent implements OnInit {
       perPage: 20,
     },
     columns: {
-      orderCode: {
-        title: 'Order Code',
+      productId: {
+        title: 'Product Id',
         filter: true,
         type: 'number',
         editable: false,
       },
-      customerCode: {
-        title: 'Customer Code',
-        type: 'string',
-        editable: true,
-      },
-      staffCode: {
-        title: 'Staff Code',
+      productName: {
+        title: 'Product Name',
         type: 'string',
         editable: true,
       },
@@ -60,22 +56,22 @@ export class OrdersSmartTableComponent implements OnInit {
       edit: false,
     },
   };
-  orders$: Observable<IOrder[]>;
+  products$: Observable<IProduct[]>;
   dialogRef: any;
   constructor(
     private store: Store<IOrder>,
     private dialogService: NbDialogService,
   ) {
-    this.orders$ = this.store.pipe(select(OrdersSelector.selectAllOrders));
-    this.orders$.subscribe(g => console.log(g.length));
+    this.products$ = this.store.pipe(select(ProductsSelector.selectAllProducts));
+    this.products$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.onRefresh();
   }
   onRefresh() {
-    this.store.dispatch(OrdersActions.loadOrders({ orders: [] }));
+    this.store.dispatch(ProductsActions.loadProducts({ products: [] }));
 }
   open() {
-    this.dialogService.open(OrdersAddComponent);
+    this.dialogService.open(ProductsAddComponent);
   }
 }

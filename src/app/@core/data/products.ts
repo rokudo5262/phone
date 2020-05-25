@@ -1,5 +1,6 @@
 export interface IProduct {
-    product_id: number;
+    productId: number;
+    productName: string;
     deleted: boolean;
     createdBy?: string;
     createdDateTime?: Date;

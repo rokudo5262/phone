@@ -1,18 +1,18 @@
-import * as OrdersReducer from './orders.reducer';
+import * as ProductsReducer from './products.reducer';
 import { combineReducers, Action } from '@ngrx/store';
-import { OrdersState } from '../states/orders.state';
+import { ProductsState } from '../states/products.state';
 
 export {
-    OrdersReducer,
+    ProductsReducer,
 };
-export const FeatureKey = 'orders';
+export const FeatureKey = 'products';
 
 export interface State {
-    [OrdersReducer.ordersFeatureKey]: OrdersState;
+    [ProductsReducer.productsFeatureKey]: ProductsState;
 }
 
 export function reducer(state: State | undefined, action: Action) {
     return combineReducers({
-        [OrdersReducer.ordersFeatureKey]: OrdersReducer.reducer,
+        [ProductsReducer.productsFeatureKey]: ProductsReducer.reducer,
     })(state, action);
 }

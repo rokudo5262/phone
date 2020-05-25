@@ -1,5 +1,5 @@
-import { OrdersPageComponent } from './orders-page/orders-page.component';
-import { OrdersDetailComponent } from './orders-detail/orders-detail.component';
+import { OrdersPageComponent } from './products-page/products-page.component';
+import { OrdersDetailComponent } from './products-detail/products-detail.component';
 
 export {
     OrdersPageComponent,

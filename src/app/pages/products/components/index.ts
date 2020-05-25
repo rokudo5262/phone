@@ -1,9 +1,9 @@
-import { OrdersSmartTableComponent } from './orders-smart-table/orders-smart-table.component';
-import { OrdersAddComponent } from './orders-add/orders-add.component';
-import { OrdersUpdateComponent } from './orders-update/orders-update.component';
+import { ProductsAddComponent } from './products-add/products-add.component';
+import { ProductsUpdateComponent } from './products-update/products-update.component';
+import { ProductsSmartTableComponent } from './products-smart-table/products-smart-table.component';
 
 export{
-    OrdersAddComponent,
-    OrdersSmartTableComponent,
-    OrdersUpdateComponent,
+    ProductsAddComponent,
+    ProductsSmartTableComponent,
+    ProductsUpdateComponent,
 };

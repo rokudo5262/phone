@@ -1,4 +1,4 @@
 import { createFeatureSelector } from '@ngrx/store';
 import { State, FeatureKey } from '../reducers';
 
-export const selectOrdersState = createFeatureSelector<State>(FeatureKey);
+export const selectProductsState = createFeatureSelector<State>(FeatureKey);
