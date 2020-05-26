@@ -54,7 +54,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
         CommonModule,
         // -------------------------------------------------------------
         Ng2SmartTableModule,
-        
         // -------------------------------------------------------------
         ProductsRoutingModule,
         ThemeModule,
