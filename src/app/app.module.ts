@@ -27,6 +27,7 @@ import { environment } from '../environments/environment';
 import { ROOT_REDUCERS, metaReducers } from './reducers/app.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -61,6 +62,7 @@ import { RouterModule } from '@angular/router';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
+    FormsModule,
   ],
   providers: [
     NbDialogService,

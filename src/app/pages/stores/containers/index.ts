@@ -1,7 +1,7 @@
-import { OrdersPageComponent } from './orders-page/orders-page.component';
-import { OrdersDetailComponent } from './orders-detail/orders-detail.component';
+import { StoresPageComponent } from './stores-page/stores-page.component';
+import { StoresDetailComponent } from './stores-detail/stores-detail.component';
 
 export {
-    OrdersPageComponent,
-    OrdersDetailComponent,
+    StoresPageComponent,
+    StoresDetailComponent,
 };

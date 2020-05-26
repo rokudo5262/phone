@@ -1,7 +1,7 @@
-import * as OrdersActions from './stores.actions';
-import * as OrdersApiActions from './stores-api.actions';
+import * as StoresActions from './stores.actions';
+import * as StoresApiActions from './stores-api.actions';
 
 export {
-  OrdersActions,
-  OrdersApiActions,
+  StoresActions,
+  StoresApiActions,
 };

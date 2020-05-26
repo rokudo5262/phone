@@ -1,1 +1,1 @@
-export * from './orders.effect';
+export * from './stores.effect';

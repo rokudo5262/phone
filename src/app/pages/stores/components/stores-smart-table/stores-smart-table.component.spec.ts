@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { OrdersSmartTableComponent } from './orders-smart-table.component';
+import { StoresSmartTableComponent } from './stores-smart-table.component';
 
-describe('OrdersSmartTableComponent', () => {
-  let component: OrdersSmartTableComponent;
-  let fixture: ComponentFixture<OrdersSmartTableComponent>;
+describe('StoresSmartTableComponent', () => {
+  let component: StoresSmartTableComponent;
+  let fixture: ComponentFixture<StoresSmartTableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrdersSmartTableComponent ],
+      declarations: [ StoresSmartTableComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrdersSmartTableComponent);
+    fixture = TestBed.createComponent(StoresSmartTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

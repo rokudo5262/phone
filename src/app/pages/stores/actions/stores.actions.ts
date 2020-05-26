@@ -1,25 +1,25 @@
 import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
-import { IOrder } from '../../../@core/data/orders';
+import { IStore } from '../../../@core/data';
 
 
-export const loadOrders = createAction(
-  '[Order/API] Load Orders',
-  props<{ orders: IOrder[] }>(),
+export const loadStores = createAction(
+  '[Store/API] Load Stores',
+  props<{ stores: IStore[] }>(),
 );
-export const addOrder = createAction(
-  '[Order/API] Add Order',
-  props<{ order: IOrder }>(),
+export const addStore = createAction(
+  '[Store/API] Add Store',
+  props<{ store: IStore }>(),
 );
-export const updateOrder = createAction(
-  '[Order/API] Update Order',
-  props<{ update: Update<IOrder> }>(),
+export const updateStore = createAction(
+  '[Store/API] Update Store',
+  props<{ update: Update<IStore> }>(),
 );
-export const deleteOrder = createAction(
-  '[Order/API] Delete Order',
-  props<{ update: Update<IOrder> }>(),
+export const deleteStore = createAction(
+  '[Store/API] Delete Store',
+  props<{ update: Update<IStore> }>(),
 );
-export const removeOrder = createAction(
-  '[Order/API] Remove Order',
-  props<{ orderId: number }>(),
+export const removeStore = createAction(
+  '[Store/API] Remove Store',
+  props<{ storeId: number }>(),
 );

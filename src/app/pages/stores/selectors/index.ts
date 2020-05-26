@@ -1,5 +1,5 @@
-export * from './orders-features.selector';
-import * as OrdersSelector from './orders.selector';
+export * from './stores-features.selector';
+import * as OrdersSelector from './stores.selector';
 
 export {
     OrdersSelector,

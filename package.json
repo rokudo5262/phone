@@ -46,6 +46,7 @@
     "@nebular/eva-icons": "5.0.0",
     "@nebular/security": "5.0.0",
     "@nebular/theme": "5.0.0",
+    "@ng-select/ng-select": "^4.0.0",
     "@ngrx/effects": "^9.1.2",
     "@ngrx/entity": "^9.1.2",
     "@ngrx/router-store": "^9.1.2",

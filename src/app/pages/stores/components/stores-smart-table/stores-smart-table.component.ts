@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { NbDialogService } from '@nebular/theme';
-import { OrdersAddComponent } from '../orders-add/orders-add.component';
-import { IOrder } from '../../../../@core/data/orders';
-import { OrdersSelector } from '../../selectors/orders.selector';
-import { OrdersActions } from '../../actions';
+import { IStore } from '../../../../@core/data/stores';
+import { StoresSelector } from '../../selectors/stores.selector';
+import { StoresActions } from '../../actions';
+import { StoresAddComponent } from '../stores-add/stores-add.component';
 
 @Component({
-  selector: 'ngx-orders-smart-table',
-  templateUrl: './orders-smart-table.component.html',
-  styleUrls: ['./orders-smart-table.component.scss'],
+  selector: 'ngx-stores-smart-table',
+  templateUrl: './stores-smart-table.component.html',
+  styleUrls: ['./stores-smart-table.component.scss'],
 
 })
-export class OrdersSmartTableComponent implements OnInit {
+export class StoresSmartTableComponent implements OnInit {
   settings = {
     hideSubHeader: false,
     // selectMode: 'multi',
@@ -60,22 +60,22 @@ export class OrdersSmartTableComponent implements OnInit {
       edit: false,
     },
   };
-  orders$: Observable<IOrder[]>;
+  stores$: Observable<IStore[]>;
   dialogRef: any;
   constructor(
-    private store: Store<IOrder>,
+    private store: Store<IStore>,
     private dialogService: NbDialogService,
   ) {
-    this.orders$ = this.store.pipe(select(OrdersSelector.selectAllOrders));
-    this.orders$.subscribe(g => console.log(g.length));
+    this.stores$ = this.store.pipe(select(StoresSelector.selectAllStores));
+    this.stores$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.onRefresh();
   }
   onRefresh() {
-    this.store.dispatch(OrdersActions.loadOrders({ orders: [] }));
+    this.store.dispatch(StoresActions.loadStores({ stores: [] }));
 }
   open() {
-    this.dialogService.open(OrdersAddComponent);
+    this.dialogService.open(StoresAddComponent);
   }
 }

@@ -30,6 +30,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { ProductsEffect } from './effects';
 import { environment } from '../../../environments/environment';
 import { ThemeModule } from '../../@theme/theme.module';
+import { NgSelectModule } from '@ng-select/ng-select';
+
 @NgModule({
     imports: [
         NbTreeGridModule,
@@ -50,7 +52,9 @@ import { ThemeModule } from '../../@theme/theme.module';
         FormsModule,
         RouterModule,
         CommonModule,
+        // -------------------------------------------------------------
         Ng2SmartTableModule,
+        
         // -------------------------------------------------------------
         ProductsRoutingModule,
         ThemeModule,
@@ -61,6 +65,7 @@ import { ThemeModule } from '../../@theme/theme.module';
         StoreModule.forFeature(FeatureKey, reducer),
         EffectsModule.forFeature([ProductsEffect]),
         Ng2SmartTableModule,
+        NgSelectModule,
     ],
     declarations: [
         ProductsComponent,

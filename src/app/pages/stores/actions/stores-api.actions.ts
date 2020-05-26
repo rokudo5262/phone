@@ -1,58 +1,58 @@
 import { createAction, props } from '@ngrx/store';
-import { IOrder } from '../../../@core/data/orders';
+import { IStore } from '../../../@core/data';
 
 /**
- * Load Orders Api Actions
+ * Load Stores Api Actions
  */
-export const loadOrdersSuccess = createAction(
-  '[Order/API] Load Order Success',
-  props<{ orders: IOrder[] }>(),
+export const loadStoresSuccess = createAction(
+  '[Store/API] Load Store Success',
+  props<{ stores: IStore[] }>(),
 );
-export const loadOrdersFailure = createAction(
-  '[Order/API] Load Orders Failure',
+export const loadStoresFailure = createAction(
+  '[Store/API] Load Stores Failure',
   props<{ errorMsg: any }>(),
 );
 /**
- * Add Order Api Actions
+ * Add Store Api Actions
  */
-export const addOrderSuccess = createAction(
-  '[Order/API] Add Order Success',
-  props<{ order: IOrder }>(),
+export const addStoreSuccess = createAction(
+  '[Store/API] Add Store Success',
+  props<{ store: IStore }>(),
 );
 
-export const addOrderFailure = createAction(
-  '[Order/API] Add Order Failure',
+export const addStoreFailure = createAction(
+  '[Store/API] Add Store Failure',
   props<{ errorMsg: any }>(),
 );
 /**
- * Update Order Api Actions
+ * Update Store Api Actions
  */
-export const updateOrderSuccess = createAction(
-  '[Order/API] Update Order Success',
+export const updateStoreSuccess = createAction(
+  '[Store/API] Update Store Success',
 );
-export const updateOrderFailure = createAction(
-  '[Order/API] Update Order Failure',
+export const updateStoreFailure = createAction(
+  '[Store/API] Update Store Failure',
   props<{ errorMsg: any }>(),
 );
 /**
- * Delete Order Api Actions
+ * Delete Store Api Actions
  */
-export const deleteOrderSuccess = createAction(
-  '[Order/API] Delete Order Success',
+export const deleteStoreSuccess = createAction(
+  '[Store/API] Delete Store Success',
 );
-export const deleteOrderFailure = createAction(
-  '[Order/API] Delete Order Failure',
+export const deleteStoreFailure = createAction(
+  '[Store/API] Delete Store Failure',
   props<{ errorMsg: any }>(),
 );
 /**
- * Remove Order Api Actions
+ * Remove Store Api Actions
  */
-export const removeOrderSuccess = createAction(
-  '[Order/API] Remove Order Success',
-  props<{ orderId: number }>(),
+export const removeStoreSuccess = createAction(
+  '[Store/API] Remove Store Success',
+  props<{ storeId: number }>(),
 );
-export const removeOrderFailure = createAction(
-  '[Order/API] Remove Order Failure',
+export const removeStoreFailure = createAction(
+  '[Store/API] Remove Store Failure',
   props<{ errorMsg: any }>(),
 );
 
