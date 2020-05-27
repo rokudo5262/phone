@@ -23,10 +23,10 @@ export class BrandsSmartTableComponent implements OnInit {
       // saveButtonContent: '<i class="nb-checkmark"></i>',
       // cancelButtonContent: '<i class="nb-close"></i>',,
     },
-    // delete: {
-    //   deleteButtonContent: '<i class="nb-trash"></i>',
-    //   confirmDelete: true,
-    // },
+    delete: {
+      deleteButtonContent: '<i class="nb-trash"></i>',
+      confirmDelete: true,
+    },
     pager: {
       display: true,
       perPage: 20,
@@ -39,7 +39,7 @@ export class BrandsSmartTableComponent implements OnInit {
         editable: false,
       },
       brandName: {
-        title: 'Brand Id',
+        title: 'Brand Name',
         type: 'string',
         editable: true,
       },
@@ -56,7 +56,7 @@ export class BrandsSmartTableComponent implements OnInit {
     },
     actions: {
       add: false,
-      delete: false,
+      delete: true,
       edit: false,
     },
   };

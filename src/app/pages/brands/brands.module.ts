@@ -32,6 +32,7 @@ import { BrandsUpdateComponent } from './components/brands-update/brands-update.
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../../environments/environment';
 import { CookieService } from 'ngx-cookie-service';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
     imports: [
@@ -56,6 +57,7 @@ import { CookieService } from 'ngx-cookie-service';
         CommonModule,
         // -------------------------------------------------------------
         Ng2SmartTableModule,
+        NgSelectModule,
         // -------------------------------------------------------------
         BrandsRoutingModule,
         // -------------------------------------------------------------

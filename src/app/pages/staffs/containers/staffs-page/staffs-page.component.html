@@ -1,11 +1,17 @@
 <nb-card>
     <nb-card-header>
-        <label>Brand List</label>
+        <div class="row">
+            <div class="title">
+                <label>Staff List</label>
+            </div>
+            <div class="button">
+                <button nbButton outline status="primary" (click)="open()">Add</button>
+            </div>
+        </div>
     </nb-card-header>
     <nb-card-body>
         <ngx-staffs-smart-table></ngx-staffs-smart-table>
     </nb-card-body>
     <nb-card-footer>
-        <button nbButton outline stats="success" (click)="add()">Add</button>
     </nb-card-footer>
 </nb-card>

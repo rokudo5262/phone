@@ -14,7 +14,7 @@ export class CustomersPageComponent implements OnInit {
 
   ngOnInit() {
   }
-  add() {
+  open() {
     this.dialogService.open(CustomersAddComponent);
   }
 }

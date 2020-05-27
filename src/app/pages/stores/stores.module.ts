@@ -32,6 +32,7 @@ import { StoresAddComponent } from './components/stores-add/stores-add.component
 import { StoresUpdateComponent } from './components/stores-update/stores-update.component';
 import { StoresDetailComponent } from './containers/stores-detail/stores-detail.component';
 import { StoresSmartTableComponent } from './components/stores-smart-table/stores-smart-table.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
     imports: [
@@ -53,7 +54,9 @@ import { StoresSmartTableComponent } from './components/stores-smart-table/store
         FormsModule,
         RouterModule,
         CommonModule,
+        // -------------------------------------------------------------
         Ng2SmartTableModule,
+        NgSelectModule,
         // -------------------------------------------------------------
         StoresRoutingModule,
         // -------------------------------------------------------------

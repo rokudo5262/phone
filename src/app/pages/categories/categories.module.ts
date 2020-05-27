@@ -27,9 +27,14 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { environment } from '../../../environments/environment';
 import { CategoriesComponent } from './categories.component';
 import { CategoriesRoutingModule } from './categories-routing.module';
-import { CategoriesPageComponent } from './containers';
 import { CategoriesSmartTableComponent } from './components/categories-smart-table/categories-smart-table.component';
 import { CategoriesEffects } from './effects';
+import { CategoriesAddComponent } from './components/categories-add/categories-add.component';
+import { CategoriesUpdateComponent } from './components/categories-update/categories-update.component';
+import { CategoriesPageComponent } from './containers/categories-page/categories-page.component';
+import { CategoriesDetailComponent } from './containers/categories-detail/categories-detail.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+
 
 @NgModule({
     imports: [
@@ -64,15 +69,20 @@ import { CategoriesEffects } from './effects';
         EffectsModule.forFeature([CategoriesEffects]),
         // -------------------------------------------------------------
         Ng2SmartTableModule,
+        NgSelectModule,
         // -------------------------------------------------------------
     ],
     declarations: [
         CategoriesComponent,
         CategoriesPageComponent,
         CategoriesSmartTableComponent,
+        CategoriesAddComponent,
+        CategoriesUpdateComponent,
+        CategoriesDetailComponent,
     ],
     entryComponents: [
-
+        CategoriesAddComponent,
+        CategoriesUpdateComponent,
     ],
     providers: [
         CookieService,

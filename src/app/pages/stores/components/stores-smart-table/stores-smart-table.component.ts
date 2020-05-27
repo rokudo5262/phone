@@ -32,19 +32,14 @@ export class StoresSmartTableComponent implements OnInit {
       perPage: 20,
     },
     columns: {
-      orderCode: {
-        title: 'Order Code',
+      storeId: {
+        title: 'Store Id',
         filter: true,
         type: 'number',
         editable: false,
       },
-      customerCode: {
-        title: 'Customer Code',
-        type: 'string',
-        editable: true,
-      },
-      staffCode: {
-        title: 'Staff Code',
+      storeName: {
+        title: 'Store Name',
         type: 'string',
         editable: true,
       },

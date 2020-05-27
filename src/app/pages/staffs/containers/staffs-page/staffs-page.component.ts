@@ -14,7 +14,7 @@ export class StaffsPageComponent implements OnInit {
 
   ngOnInit() {
   }
-  add() {
+  open() {
     this.dialogService.open(StaffsAddComponent);
   }
 }

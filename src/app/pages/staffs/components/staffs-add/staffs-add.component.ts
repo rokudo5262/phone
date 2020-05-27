@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NbDialogRef } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-staffs-add',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './staffs-add.component.html',
 })
 export class StaffsAddComponent implements OnInit {
+  constructor(
+    private dialogRef: NbDialogRef<StaffsAddComponent>,
+  ) { }
   ngOnInit() {
+  }
+  close() {
+    this.dialogRef.close();
   }
 }

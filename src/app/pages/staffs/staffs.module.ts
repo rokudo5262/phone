@@ -28,6 +28,7 @@ import { StaffsEffect } from './effects/staffs.effect';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../../environments/environment';
 import { FeatureKey, reducer } from './reducers';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
     imports: [
@@ -49,7 +50,9 @@ import { FeatureKey, reducer } from './reducers';
         FormsModule,
         RouterModule,
         CommonModule,
+        // -------------------------------------------------------------
         Ng2SmartTableModule,
+        NgSelectModule,
         // -------------------------------------------------------------
         StaffsRoutingModule,
         // -------------------------------------------------------------

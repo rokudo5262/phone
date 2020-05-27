@@ -1,4 +1,6 @@
 import { OnInit, Component } from '@angular/core';
+import { NbDialogService } from '@nebular/theme';
+import { CategoriesAddComponent } from '../../components/categories-add/categories-add.component';
 
 @Component({
     selector: 'ngx-categories-page',
@@ -8,10 +10,12 @@ import { OnInit, Component } from '@angular/core';
 
 export class CategoriesPageComponent implements OnInit {
     constructor(
+        private dialogService: NbDialogService,
     ) { }
-    ngOnInit() {
-    }
-    add() {
-
-    }
+    
+      ngOnInit() {
+      }
+      open() {
+        this.dialogService.open(CategoriesAddComponent);
+      }
 }

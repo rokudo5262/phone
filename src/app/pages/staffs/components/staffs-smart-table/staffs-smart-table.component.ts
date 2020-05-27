@@ -20,25 +20,31 @@ export class StaffsSmartTableComponent implements OnInit {
       // saveButtonContent: '<i class="nb-checkmark"></i>',
       // cancelButtonContent: '<i class="nb-close"></i>',,
     },
-    // delete: {
-    //   deleteButtonContent: '<i class="nb-trash"></i>',
-    //   confirmDelete: true,
-    // },
+    delete: {
+      deleteButtonContent: '<i class="nb-trash"></i>',
+      confirmDelete: true,
+    },
     pager: {
       display: true,
       perPage: 20,
     },
     columns: {
       staffId: {
-        title: 'Staffs Id',
+        title: 'Staff Id',
         filter: true,
         type: 'number',
         editable: false,
       },
+      staffName: {
+        title: 'Staff Name',
+        filter: true,
+        type: 'string',
+        editable: true,
+      },
     },
     actions: {
       add: false,
-      delete: false,
+      delete: true,
       edit: false,
     },
   };

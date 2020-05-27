@@ -1,6 +1,8 @@
 <nb-card>
   <nb-card-header>
-    <label>Add Store</label>
+    <div class="title">
+    <label>Add Category</label>
+  </div>
   </nb-card-header>
   <nb-card-body>
       <div class="row">
@@ -10,17 +12,17 @@
           <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy">
         </div>
         <div class="col-xs-6 col-md-6">
-          <label>Store Name</label>
+          <label>Category Name</label>
           <input type="text" name="name" formControlName="name" class="form-control" placeholder="name">
         </div>
         <div class="col-xs-6 col-md-6">
-          <label>Store Note</label>
+          <label>Category Remark</label>
           <input type="text" name="note" formControlName="note" class="form-control" placeholder="note">
         </div>
       </div>
       <div class="row">
         <div class="col-xs-6 col-md-6">
-          <label>Store Status</label>
+          <label>Category Status</label>
           <nb-select aria-required placeholder="Status" formControlName="status" name="status" fullWidth>
             <nb-option value="on">On</nb-option>
             <nb-option value="off">Off</nb-option>

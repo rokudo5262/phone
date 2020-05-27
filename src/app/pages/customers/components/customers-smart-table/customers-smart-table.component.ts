@@ -23,23 +23,23 @@ export class CustomersSmartTableComponent implements OnInit {
       // saveButtonContent: '<i class="nb-checkmark"></i>',
       // cancelButtonContent: '<i class="nb-close"></i>',,
     },
-    // delete: {
-    //   deleteButtonContent: '<i class="nb-trash"></i>',
-    //   confirmDelete: true,
-    // },
+    delete: {
+      deleteButtonContent: '<i class="nb-trash"></i>',
+      confirmDelete: true,
+    },
     pager: {
       display: true,
       perPage: 20,
     },
     columns: {
-      brandId: {
-        title: 'Brand Id',
+      customerId: {
+        title: 'Customer Id',
         filter: true,
         type: 'number',
         editable: false,
       },
-      brandName: {
-        title: 'Brand Id',
+      customerName: {
+        title: 'Customer Name',
         type: 'string',
         editable: true,
       },
@@ -56,7 +56,7 @@ export class CustomersSmartTableComponent implements OnInit {
     },
     actions: {
       add: false,
-      delete: false,
+      delete: true,
       edit: false,
     },
   };

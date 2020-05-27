@@ -29,6 +29,7 @@ import { environment } from '../../../environments/environment';
 import { CookieService } from 'ngx-cookie-service';
 import { CustomersPageComponent, CustomersDetailComponent } from './containers';
 import { CustomersAddComponent, CustomersUpdateComponent, CustomersSmartTableComponent } from './components';
+import { NgSelectModule } from '@ng-select/ng-select';
 @NgModule({
     imports: [
         NbTreeGridModule,
@@ -49,7 +50,9 @@ import { CustomersAddComponent, CustomersUpdateComponent, CustomersSmartTableCom
         FormsModule,
         RouterModule,
         CommonModule,
+        // -------------------------------------------------------------
         Ng2SmartTableModule,
+        NgSelectModule,
         // -------------------------------------------------------------
         CustomersRoutingModule,
         // -------------------------------------------------------------
