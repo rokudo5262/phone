@@ -9,12 +9,12 @@ import { CategoriesAddComponent } from '../../components/categories-add/categori
 })
 
 export class CategoriesPageComponent implements OnInit {
-    constructor(
-        private dialogService: NbDialogService,
-    ) { }
-      ngOnInit() {
-      }
-      open() {
-        this.dialogService.open(CategoriesAddComponent);
-      }
+  constructor(
+    private dialogService: NbDialogService,
+  ) { }
+  ngOnInit() {
+  }
+  open() {
+    this.dialogService.open(CategoriesAddComponent);
+  }
 }
