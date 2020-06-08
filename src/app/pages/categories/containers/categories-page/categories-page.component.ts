@@ -12,7 +12,6 @@ export class CategoriesPageComponent implements OnInit {
     constructor(
         private dialogService: NbDialogService,
     ) { }
-    
       ngOnInit() {
       }
       open() {
