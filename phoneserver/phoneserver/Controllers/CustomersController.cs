@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -47,6 +47,7 @@ namespace phoneserver.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCustomers(int id, Customers customers)
         {
+
             if (id != customers.CustomerId)
             {
                 return BadRequest();
@@ -79,7 +80,9 @@ namespace phoneserver.Controllers
         [HttpPost]
         public async Task<ActionResult<Customers>> PostCustomers(Customers customers)
         {
-            _context.Customers.Add(customers);
+      customers.LastUpdatedDateTime = DateTime.Now;
+      customers.CreatedDateTime = DateTime.Now;
+      _context.Customers.Add(customers);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCustomers", new { id = customers.CustomerId }, customers);

@@ -13,27 +13,27 @@ CREATE TABLE [dbo].[Brands](
 	[status][nvarchar](255) NULL,
 	[remark][nvarchar](255) NULL,
 	[deleted] [bit] NULL,
-	[updatedby] [nvarchar](255) NULL,
-	[createdBy] [nvarchar](255) NULL,
-	[updatedDateTime] [datetime] NULL,
-	[createdDateTime] [datetime] NULL,
+	[createdBy] [nvarchar] (255) null,
+	[createdDateTime] [datetime] null,
+	[lastUpdatedBy] [nvarchar] (255) null,
+	[lastUpdatedDateTime] [datetime] null,
 );
 
-INSERT INTO [Brands]( brand_name,deleted)
+INSERT INTO [Brands]( brand_name,status,deleted)
    VALUES
-   (N'SamSung','0'),
-   (N'Apple','0'),
-   (N'Opple','0'),
-   (N'Xiaomi','0'),
-   (N'Vivo','0'),
-   (N'Huawei','0'),
-   (N'LG','0'),
-   (N'Sony','0'),
-   (N'HTC','0'),
-   (N'Nokia','0'),
-   (N'Lenovo','0'),
-   (N'Xiaomi','0'),
-   (N'BPhone','0');
+   (N'SamSung',N'On','0'),
+   (N'Apple'  ,N'On','0'),
+   (N'Opple'  ,N'On','0'),
+   (N'Xiaomi' ,N'On','0'),
+   (N'Vivo'   ,N'On','0'),
+   (N'Huawei' ,N'On','0'),
+   (N'LG'     ,N'On','0'),
+   (N'Sony'   ,N'On','0'),
+   (N'HTC'    ,N'On','0'),
+   (N'Nokia'  ,N'On','0'),
+   (N'Lenovo' ,N'On','0'),
+   (N'Xiaomi' ,N'On','0'),
+   (N'BPhone' ,N'On','0');
 
 ALTER TABLE [dbo].[Categories] ADD  CONSTRAINT [DF_Catagories_deleted]  DEFAULT ((0)) FOR [deleted]
 GO

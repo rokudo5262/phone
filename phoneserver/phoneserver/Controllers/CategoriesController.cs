@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -47,7 +47,7 @@ namespace phoneserver.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategories(int id, Categories categories)
         {
-            if (id != categories.CategoryId)
+      if (id != categories.CategoryId)
             {
                 return BadRequest();
             }
@@ -79,7 +79,9 @@ namespace phoneserver.Controllers
         [HttpPost]
         public async Task<ActionResult<Categories>> PostCategories(Categories categories)
         {
-            _context.Categories.Add(categories);
+      categories.LastUpdatedDateTime = DateTime.Now;
+      categories.CreatedDateTime = DateTime.Now;
+      _context.Categories.Add(categories);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCategories", new { id = categories.CategoryId }, categories);

@@ -51,13 +51,13 @@ namespace phoneserver.Models
                     .HasColumnName("status")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.UpdatedDateTime)
-                    .HasColumnName("updatedDateTime")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.LastUpdatedBy)
+                   .HasColumnName("lastUpdatedBy")
+                   .HasMaxLength(255);
 
-                entity.Property(e => e.Updatedby)
-                    .HasColumnName("updatedby")
-                    .HasMaxLength(255);
+                entity.Property(e => e.LastUpdatedDateTime)
+                    .HasColumnName("lastUpdatedDateTime")
+                    .HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Categories>(entity =>
@@ -70,7 +70,13 @@ namespace phoneserver.Models
                 entity.Property(e => e.CategoryName)
                     .HasColumnName("category_name")
                     .HasMaxLength(255);
+                entity.Property(e => e.Remark)
+                      .HasColumnName("remark")
+                      .HasMaxLength(255);
 
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasMaxLength(255);
                 entity.Property(e => e.CreatedBy)
                     .HasColumnName("createdBy")
                     .HasMaxLength(255);
@@ -83,13 +89,13 @@ namespace phoneserver.Models
                     .HasColumnName("deleted")
                     .HasDefaultValueSql("((0))");
 
-                entity.Property(e => e.UpdatedDateTime)
-                    .HasColumnName("updatedDateTime")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.LastUpdatedBy)
+                   .HasColumnName("lastUpdatedBy")
+                   .HasMaxLength(255);
 
-                entity.Property(e => e.Updatedby)
-                    .HasColumnName("updatedby")
-                    .HasMaxLength(255);
+                entity.Property(e => e.LastUpdatedDateTime)
+                    .HasColumnName("lastUpdatedDateTime")
+                    .HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Customers>(entity =>
@@ -187,17 +193,17 @@ namespace phoneserver.Models
                     .HasColumnName("street")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.UpdatedDateTime)
-                    .HasColumnName("updatedDateTime")
+                entity.Property(e => e.LastUpdatedBy)
+                   .HasColumnName("lastUpdatedBy")
+                   .HasMaxLength(255);
+
+                entity.Property(e => e.LastUpdatedDateTime)
+                    .HasColumnName("lastUpdatedDateTime")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.Updatedby)
-                    .HasColumnName("updatedby")
-                    .HasMaxLength(255);
-
                 entity.Property(e => e.Ward)
-                    .HasColumnName("ward")
-                    .HasMaxLength(255);
+                      .HasColumnName("ward")
+                      .HasMaxLength(255);
 
                 entity.Property(e => e.ZipCode)
                     .HasColumnName("zip_code")
@@ -241,13 +247,13 @@ namespace phoneserver.Models
                     .HasColumnName("status")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.UpdatedDateTime)
-                    .HasColumnName("updatedDateTime")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.LastUpdatedBy)
+                   .HasColumnName("lastUpdatedBy")
+                   .HasMaxLength(255);
 
-                entity.Property(e => e.Updatedby)
-                    .HasColumnName("updatedby")
-                    .HasMaxLength(255);
+                entity.Property(e => e.LastUpdatedDateTime)
+                    .HasColumnName("lastUpdatedDateTime")
+                    .HasColumnType("datetime");
 
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderItems)
@@ -301,19 +307,19 @@ namespace phoneserver.Models
 
                 entity.Property(e => e.StoreId).HasColumnName("store_id");
 
-                entity.Property(e => e.UpdatedDateTime)
-                    .HasColumnName("updatedDateTime")
+                entity.Property(e => e.LastUpdatedBy)
+                   .HasColumnName("lastUpdatedBy")
+                   .HasMaxLength(255);
+
+                entity.Property(e => e.LastUpdatedDateTime)
+                    .HasColumnName("lastUpdatedDateTime")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.Updatedby)
-                    .HasColumnName("updatedby")
-                    .HasMaxLength(255);
-
                 entity.HasOne(d => d.Customer)
-                    .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Orders_Customers");
+                      .WithMany(p => p.Orders)
+                      .HasForeignKey(d => d.CustomerId)
+                      .OnDelete(DeleteBehavior.ClientSetNull)
+                      .HasConstraintName("FK_Orders_Customers");
 
                 entity.HasOne(d => d.Staff)
                     .WithMany(p => p.Orders)
@@ -481,17 +487,17 @@ namespace phoneserver.Models
                     .HasColumnName("street")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.UpdatedDateTime)
-                    .HasColumnName("updatedDateTime")
+                entity.Property(e => e.LastUpdatedBy)
+                   .HasColumnName("lastUpdatedBy")
+                   .HasMaxLength(255);
+
+                entity.Property(e => e.LastUpdatedDateTime)
+                    .HasColumnName("lastUpdatedDateTime")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.Updatedby)
-                    .HasColumnName("updatedby")
-                    .HasMaxLength(255);
-
                 entity.Property(e => e.Ward)
-                    .HasColumnName("ward")
-                    .HasMaxLength(255);
+                      .HasColumnName("ward")
+                      .HasMaxLength(255);
 
                 entity.Property(e => e.ZipCode)
                     .HasColumnName("zip_code")
@@ -541,18 +547,18 @@ namespace phoneserver.Models
 
                 entity.Property(e => e.StoreId).HasColumnName("store_id");
 
-                entity.Property(e => e.UpdatedDateTime)
-                    .HasColumnName("updatedDateTime")
+                entity.Property(e => e.LastUpdatedBy)
+                   .HasColumnName("lastUpdatedBy")
+                   .HasMaxLength(255);
+
+                entity.Property(e => e.LastUpdatedDateTime)
+                    .HasColumnName("lastUpdatedDateTime")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.Updatedby)
-                    .HasColumnName("updatedby")
-                    .HasMaxLength(255);
-
                 entity.HasOne(d => d.Product)
-                    .WithMany(p => p.Stocks)
-                    .HasForeignKey(d => d.ProductId)
-                    .HasConstraintName("FK_Stocks_Products");
+                      .WithMany(p => p.Stocks)
+                      .HasForeignKey(d => d.ProductId)
+                      .HasConstraintName("FK_Stocks_Products");
 
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Stocks)
@@ -613,17 +619,17 @@ namespace phoneserver.Models
                     .HasColumnName("street")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.UpdatedDateTime)
-                    .HasColumnName("updatedDateTime")
+                entity.Property(e => e.LastUpdatedBy)
+                   .HasColumnName("lastUpdatedBy")
+                   .HasMaxLength(255);
+
+                entity.Property(e => e.LastUpdatedDateTime)
+                    .HasColumnName("lastUpdatedDateTime")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.Updatedby)
-                    .HasColumnName("updatedby")
-                    .HasMaxLength(255);
-
                 entity.Property(e => e.Ward)
-                    .HasColumnName("ward")
-                    .HasMaxLength(255);
+                      .HasColumnName("ward")
+                      .HasMaxLength(255);
 
                 entity.Property(e => e.ZipCode)
                     .HasColumnName("zip_code")

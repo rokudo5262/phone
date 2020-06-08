@@ -54,6 +54,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
         CommonModule,
         // -------------------------------------------------------------
         Ng2SmartTableModule,
+        NgSelectModule,
         // -------------------------------------------------------------
         ProductsRoutingModule,
         ThemeModule,
@@ -63,8 +64,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
         }),
         StoreModule.forFeature(FeatureKey, reducer),
         EffectsModule.forFeature([ProductsEffect]),
-        Ng2SmartTableModule,
-        NgSelectModule,
     ],
     declarations: [
         ProductsComponent,

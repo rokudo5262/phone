@@ -1,36 +1,40 @@
 <nb-card>
-    <nb-card-header>
+  <nb-card-header>
+    <div class="title">
       <label>Add Brand</label>
-    </nb-card-header>
-    <nb-card-body>
-        <div class="row">
-          <div class="col-xs-12 col-md-12">
-            <input type="hidden" formControlName="id" class="form-control" name="id">
-            <input type="hidden" formControlName="createdBy" class="form-control" name="createdBy">
-            <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy">
-          </div>
-          <div class="col-xs-6 col-md-6">
-            <label>Brand Name</label>
-            <input type="text" name="name" formControlName="name" class="form-control" placeholder="name">
-          </div>
-          <div class="col-xs-6 col-md-6">
-            <label>Brand Remark</label>
-            <input type="text" name="note" formControlName="note" class="form-control" placeholder="note">
-          </div>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="addBrandForm" method="POST">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <input type="hidden" formControlName="brandId" class="form-control" name="brandId">
+          <input type="hidden" formControlName="createdBy" class="form-control" name="createdBy">
+          <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy">
         </div>
-        <div class="row">
-          <div class="col-xs-6 col-md-6">
-            <label>Brand Status</label>
-            <nb-select aria-required placeholder="Status" formControlName="status" name="status" fullWidth>
-              <nb-option value="on">On</nb-option>
-              <nb-option value="off">Off</nb-option>
-            </nb-select>
-          </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Brand Name</label>
+          <input type="text" name="brandName" formControlName="brandName" class="form-control"
+            placeholder="brandName">
         </div>
-    </nb-card-body>
-    <nb-card-footer>
-      <button nbButton status="danger" (click)="close()">Close</button>
-      <button nbButton status="success">Save</button>
-    </nb-card-footer>
-  </nb-card>
-  
+        <div class="col-xs-6 col-md-6">
+          <label>Brand Remark</label>
+          <input type="text" name="note" formControlName="remark" class="form-control" placeholder="remark">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-6">
+          <label>Brand Status</label>
+          <nb-select placeholder="Status" formControlName="status" name="status" fullWidth>
+            <nb-option value="On">On</nb-option>
+            <nb-option value="Off">Off</nb-option>
+          </nb-select>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="danger" (click)="close()">Close</button>
+    <button nbButton status="success" (click)="submit(addBrandForm.value)">Save</button>
+  </nb-card-footer>
+</nb-card>

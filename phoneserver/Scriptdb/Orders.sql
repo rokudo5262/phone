@@ -17,10 +17,10 @@ CREATE TABLE [dbo].[Orders](
 	[deleted] [bit] NULL,
   [status][nvarchar](255) NULL,
 	[remark][nvarchar](255) NULL,
-	[updatedby] [nvarchar](255) NULL,
-	[createdBy] [nvarchar](255) NULL,
-	[updatedDateTime] [datetime] NULL,
-	[createdDateTime] [datetime] NULL,
+	[createdBy] [nvarchar] (255) null,
+	[createdDateTime] [datetime] null,
+	[lastUpdatedBy] [nvarchar] (255) null,
+	[lastUpdatedDateTime] [datetime] null,
 );
 
 INSERT INTO [Orders]( customer_id,store_id,staff_id,deleted)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -79,7 +79,9 @@ namespace phoneserver.Controllers
         [HttpPost]
         public async Task<ActionResult<Orders>> PostOrders(Orders orders)
         {
-            _context.Orders.Add(orders);
+        orders.LastUpdatedDateTime = DateTime.Now;
+        orders.CreatedDateTime = DateTime.Now;
+        _context.Orders.Add(orders);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetOrders", new { id = orders.OrderId }, orders);

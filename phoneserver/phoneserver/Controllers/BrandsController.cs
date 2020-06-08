@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,6 +24,7 @@ namespace phoneserver.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Brands>>> GetBrands()
         {
+
             return await _context.Brands.ToListAsync();
         }
 
@@ -47,7 +48,7 @@ namespace phoneserver.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBrands(int id, Brands brands)
         {
-            if (id != brands.BrandId)
+      if (id != brands.BrandId)
             {
                 return BadRequest();
             }
@@ -79,7 +80,9 @@ namespace phoneserver.Controllers
         [HttpPost]
         public async Task<ActionResult<Brands>> PostBrands(Brands brands)
         {
-            _context.Brands.Add(brands);
+      brands.LastUpdatedDateTime = DateTime.Now;
+      brands.CreatedDateTime = DateTime.Now;
+      _context.Brands.Add(brands);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBrands", new { id = brands.BrandId }, brands);
