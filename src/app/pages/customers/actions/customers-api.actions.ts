@@ -2,25 +2,25 @@ import { createAction, props } from '@ngrx/store';
 import { ICustomer } from '../../../@core/data';
 
 /**
- * Load Brands Api Actions
+ * Load Customers Api Actions
  */
 export const loadCustomersSuccess = createAction(
     '[Customer/API] Load Customers Success',
     props<{ customers: ICustomer[] }>(),
 );
-export const loadBrandsFailure = createAction(
+export const loadCustomersFailure = createAction(
     '[Customer/API] Load Customers Failure',
     props<{ errorMsg: any }>(),
 );
 /**
- * Add Brand Api Actions
+ * Add Customer Api Actions
  */
-export const addBrandSuccess = createAction(
+export const addCustomerSuccess = createAction(
     '[Customer/API] Add Customer Success',
     props<{ customer: ICustomer }>(),
 );
 
-export const addBrandFailure = createAction(
+export const addCustomerFailure = createAction(
     '[Customer/API] Add Customer Failure',
     props<{ errorMsg: any }>(),
 );

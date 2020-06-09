@@ -16,7 +16,7 @@ export const reducer = createReducer(
     ),
     on(
         CustomersActions.addCustomer,
-        CustomersApiActions.addBrandSuccess,
+        CustomersApiActions.addCustomerSuccess,
         (state, { customer }) => customerAdapter.addOne(customer, state),
     ),
     on(

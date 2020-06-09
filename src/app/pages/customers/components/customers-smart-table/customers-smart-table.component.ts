@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { IBrand, ICustomer } from '../../../../@core/data';
 import { Observable } from 'rxjs/internal/Observable';
 import { Store, select } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { NbDialogService } from '@nebular/theme';
 import { CustomersSelector } from '../../selectors/customers.selector';
 import { CustomersActions } from '../../actions';
-import { CustomersAddComponent } from '../customers-add/customers-add.component';
+import { ICustomer } from '../../../../@core/data/customers';
 
 @Component({
   selector: 'ngx-customers-smart-table',
@@ -63,9 +61,8 @@ export class CustomersSmartTableComponent implements OnInit {
   customers$: Observable<ICustomer[]>;
   dialogRef: any;
   constructor(
-    private store: Store<IBrand>,
+    private store: Store<ICustomer>,
     private route: Router,
-    private dialogService: NbDialogService,
   ) {
     this.customers$ = this.store.pipe(select(CustomersSelector.selectAllCustomers));
     this.customers$.subscribe(g => console.log(g.length));
@@ -73,16 +70,7 @@ export class CustomersSmartTableComponent implements OnInit {
   ngOnInit () {
     this.store.dispatch(CustomersActions.loadCustomers({ customers: [] }));
   }
-  navigateToBrandDetail(event) {
-    this.route.navigate(['pages/brands/brand/', event.data.id]);
-  }
-  add() {
-    this.dialogService.open(CustomersAddComponent);
-  }
-  back() {
-    this.route.navigate(['pages/brands/library']);
-  }
-  close() {
-    this.dialogRef.close();
+  navigateToCustomerDetail(event) {
+    this.route.navigate(['pages/customers/customer/', event.data.customerId]);
   }
 }

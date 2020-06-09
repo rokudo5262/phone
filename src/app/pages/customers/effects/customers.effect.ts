@@ -15,7 +15,7 @@ export class BrandsEffect {
                 map((items: ICustomer[]) => CustomersApiActions
                     .loadCustomersSuccess({ customers: items })),
                 catchError(err => of(CustomersApiActions
-                    .loadBrandsFailure({ errorMsg: err.message }))),
+                    .loadCustomersFailure({ errorMsg: err.message }))),
             )),
     ));
     add$ = createEffect(() => this.action$.pipe(
@@ -23,9 +23,9 @@ export class BrandsEffect {
         switchMap(({ customer }) =>
             this.customersService.add_customer(customer).pipe(
                 map((item: ICustomer) => CustomersApiActions
-                    .addBrandSuccess({ customer: item })),
+                    .addCustomerSuccess({ customer: item })),
                 catchError(error => of(CustomersApiActions
-                    .addBrandFailure({ errorMsg: error.message }))),
+                    .addCustomerFailure({ errorMsg: error.message }))),
             )),
     ));
     update$ = createEffect(() => this.action$.pipe(

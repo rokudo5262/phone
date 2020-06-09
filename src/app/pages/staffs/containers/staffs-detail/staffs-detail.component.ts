@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { IBrand } from '../../../../@core/data/brands';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StaffsSelector } from '../../selectors';
 import { StaffsActions } from '../../actions';
+import { IStaff } from '../../../../@core/data/staffs';
 
 @Component({
   selector: 'ngx-staffs-detail',
@@ -14,8 +14,9 @@ export class StaffsDetailComponent implements OnInit {
   staff$;
   staffId$: number;
   constructor(
+    private route: Router,
     private router: ActivatedRoute,
-    private store: Store<IBrand>,
+    private store: Store<IStaff>,
   ) {
     this.staffId$ = +this.router.snapshot.params.staffId;
     this.staff$ = this.store.pipe(select(StaffsSelector.selectCurrentStaff(this.staffId$)));
@@ -28,5 +29,6 @@ export class StaffsDetailComponent implements OnInit {
   delete() {
   }
   back() {
+    this.route.navigate(['pages/staffs/library']);
   }
 }

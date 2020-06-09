@@ -3,9 +3,7 @@ import { IBrand } from '../../../../@core/data';
 import { Observable } from 'rxjs/internal/Observable';
 import { Store, select } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { NbDialogService } from '@nebular/theme';
 import { BrandsActions } from '../../actions';
-import { BrandsAddComponent } from '../brands-add/brands-add.component';
 import { BrandsSelector } from '../../selectors';
 
 @Component({
@@ -65,7 +63,6 @@ export class BrandsSmartTableComponent implements OnInit {
   constructor(
     private store: Store<IBrand>,
     private route: Router,
-    private dialogService: NbDialogService,
   ) {
     this.brands$ = this.store.pipe(select(BrandsSelector.selectAllBrands));
     this.brands$.subscribe(g => console.log(g.length));
@@ -74,15 +71,6 @@ export class BrandsSmartTableComponent implements OnInit {
     this.store.dispatch(BrandsActions.loadBrands({ brands: [] }));
   }
   navigateToBrandDetail(event) {
-    this.route.navigate(['pages/brands/brand/', event.data.id]);
-  }
-  add() {
-    this.dialogService.open(BrandsAddComponent);
-  }
-  back() {
-    this.route.navigate(['pages/brands/library']);
-  }
-  close() {
-    this.dialogRef.close();
+    this.route.navigate(['pages/brands/brand/', event.data.brandId]);
   }
 }

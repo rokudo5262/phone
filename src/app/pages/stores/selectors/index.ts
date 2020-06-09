@@ -1,6 +1,6 @@
 export * from './stores-features.selector';
-import * as OrdersSelector from './stores.selector';
+import * as StoresSelector from './stores.selector';
 
 export {
-    OrdersSelector,
+    StoresSelector,
 };

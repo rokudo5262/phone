@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomersSelector } from '../../selectors';
 import { ICustomer } from '../../../../@core/data/customers';
 import { CustomersActions } from '../../actions';
@@ -14,6 +14,7 @@ export class CustomersDetailComponent implements OnInit {
   customer$;
   customerId$: number;
   constructor(
+    private route: Router,
     private router: ActivatedRoute,
     private store: Store<ICustomer>,
   ) {
@@ -28,5 +29,6 @@ export class CustomersDetailComponent implements OnInit {
   delete() {
   }
   back() {
+    this.route.navigate(['pages/customers/library']);
   }
 }

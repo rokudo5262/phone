@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ICategory } from '../../../../@core/data/categories';
 import { CategoriesSelectors } from '../../selectors';
 import { CategoriesActions } from '../../actions';
@@ -14,6 +14,7 @@ export class CategoriesDetailComponent implements OnInit {
   categories$;
   categoriesId$: number;
   constructor(
+    private route: Router,
     private router: ActivatedRoute,
     private store: Store<ICategory>,
   ) {
@@ -28,5 +29,6 @@ export class CategoriesDetailComponent implements OnInit {
   delete() {
   }
   back() {
+    this.route.navigate(['pages/categories/library']);
   }
 }

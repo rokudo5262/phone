@@ -7,6 +7,7 @@ import { ProductsSelector } from '../../selectors/products.selector';
 import { ProductsActions } from '../../actions';
 import { ProductsAddComponent } from '../products-add/products-add.component';
 import { IProduct } from '../../../../@core/data/products';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-products-smart-table',
@@ -59,6 +60,7 @@ export class ProductsSmartTableComponent implements OnInit {
   products$: Observable<IProduct[]>;
   dialogRef: any;
   constructor(
+    private route: Router,
     private store: Store<IOrder>,
     private dialogService: NbDialogService,
   ) {
@@ -66,12 +68,12 @@ export class ProductsSmartTableComponent implements OnInit {
     this.products$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
-    this.onRefresh();
-  }
-  onRefresh() {
     this.store.dispatch(ProductsActions.loadProducts({ products: [] }));
-}
+  }
   open() {
     this.dialogService.open(ProductsAddComponent);
+  }
+  navigateToProductDetail(event) {
+    this.route.navigate(['pages/products/product/', event.data.productId]);
   }
 }

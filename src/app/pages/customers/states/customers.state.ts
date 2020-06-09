@@ -1,5 +1,5 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { ICustomer } from '../../../@core/data';
+import { ICustomer } from '../../../@core/data/customers';
 
 export interface CustomersState extends EntityState<ICustomer> {
     selectedCustomerID: number | string | null;

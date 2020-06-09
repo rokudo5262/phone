@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ICategory } from '../../../../@core/data';
 import { CategoriesSelector } from '../../selectors/categories.selector';
 import { CategoriesActions } from '../../actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-categories-smart-table',
@@ -56,6 +57,7 @@ export class CategoriesSmartTableComponent implements OnInit {
   categories$: Observable<ICategory[]>;
   dialogRef: any;
   constructor(
+    private route: Router,
     private store: Store<ICategory>,
   ) {
     this.categories$ = this.store.pipe(select(CategoriesSelector.selectAllCategories));
@@ -63,5 +65,8 @@ export class CategoriesSmartTableComponent implements OnInit {
   }
   ngOnInit() {
     this.store.dispatch(CategoriesActions.loadCategories({ categories: [] }));
+  }
+  navigateToCategoryDetail(event) {
+    this.route.navigate(['pages/categories/category', event.data.categoryId]);
   }
 }

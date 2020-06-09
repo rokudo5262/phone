@@ -1,1 +1,3 @@
-<ng2-smart-table [settings]="settings" [source]="orders$ | async"></ng2-smart-table>
+<ng2-smart-table [settings]="settings" [source]="orders$ | async"
+(userRowSelect)="navigateToOrderDetail($event)"
+></ng2-smart-table>

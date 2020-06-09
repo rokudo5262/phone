@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Store, select } from '@ngrx/store';
 import { StaffSelectors } from '../../selectors/staffs.selector';
 import { StaffsActions } from '../../actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-staffs-smart-table',
@@ -51,6 +52,7 @@ export class StaffsSmartTableComponent implements OnInit {
   staffs$: Observable<IStaff[]>;
   dialogRef: any;
   constructor(
+    private route: Router,
     private store: Store<IStaff>,
   ) {
     this.staffs$ = this.store.pipe(select(StaffSelectors.selectAllStaffs));
@@ -59,7 +61,7 @@ export class StaffsSmartTableComponent implements OnInit {
   ngOnInit () {
     this.store.dispatch(StaffsActions.loadStaffs({ staffs: [] }));
   }
-  close() {
-    this.dialogRef.close();
+  navigateToStaffDetail(event) {
+    this.route.navigate(['pages/staffs/staff/', event.data.staffId]);
   }
 }

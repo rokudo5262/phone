@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { NbDialogService } from '@nebular/theme';
-import { OrdersAddComponent } from '../orders-add/orders-add.component';
 import { IOrder } from '../../../../@core/data/orders';
 import { OrdersSelector } from '../../selectors/orders.selector';
 import { OrdersActions } from '../../actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-orders-smart-table',
@@ -32,21 +31,21 @@ export class OrdersSmartTableComponent implements OnInit {
       perPage: 20,
     },
     columns: {
-      orderCode: {
-        title: 'Order Code',
+      orderId: {
+        title: 'Order Id',
         filter: true,
         type: 'number',
         editable: false,
       },
-      customerCode: {
-        title: 'Customer Code',
-        type: 'string',
-        editable: true,
+      customerId: {
+        title: 'Customer Id',
+        type: 'number',
+        editable: false,
       },
-      staffCode: {
-        title: 'Staff Code',
-        type: 'string',
-        editable: true,
+      staffId: {
+        title: 'Staff Id',
+        type: 'number',
+        editable: false,
       },
       status: {
         title: 'Status',
@@ -63,19 +62,16 @@ export class OrdersSmartTableComponent implements OnInit {
   orders$: Observable<IOrder[]>;
   dialogRef: any;
   constructor(
+    private route: Router,
     private store: Store<IOrder>,
-    private dialogService: NbDialogService,
   ) {
     this.orders$ = this.store.pipe(select(OrdersSelector.selectAllOrders));
     this.orders$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
-    this.onRefresh();
-  }
-  onRefresh() {
     this.store.dispatch(OrdersActions.loadOrders({ orders: [] }));
-}
-  open() {
-    this.dialogService.open(OrdersAddComponent);
+  }
+  navigateToOrderDetail(event) {
+    this.route.navigate(['pages/orders/order/', event.data.orderId]);
   }
 }

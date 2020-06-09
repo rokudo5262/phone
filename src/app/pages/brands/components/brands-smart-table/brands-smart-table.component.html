@@ -1,3 +1,4 @@
-<ng2-smart-table [settings]="settings" [source]="brands$ | async">
-    
+<ng2-smart-table [settings]="settings" [source]="brands$ | async"
+(userRowSelect)="navigateToBrandDetail($event)"
+>
 </ng2-smart-table>

@@ -1,1 +1,3 @@
-<ng2-smart-table [settings]="settings" [source]="categories$ | async"></ng2-smart-table>
+<ng2-smart-table [settings]="settings" [source]="categories$ | async"
+(userRowSelect)="navigateToCategoryDetail($event)"
+></ng2-smart-table>

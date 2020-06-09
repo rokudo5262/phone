@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-orders-detail',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersDetailComponent implements OnInit {
   constructor(
+    private route: Router,
   ) { }
   ngOnInit() {
   }
-  submit() {
-
+  update() {
   }
-  close() {
-
+  delete() {
+  }
+  back() {
+    this.route.navigate(['pages/orders/library']);
   }
 }
