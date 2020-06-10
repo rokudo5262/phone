@@ -24,7 +24,7 @@ export class StaffsDetailComponent implements OnInit {
   ) {
     this.staffId$ = +this.router.snapshot.params.staffId;
     this.staff$ = this.store.pipe(select(StaffsSelector.selectCurrentStaff(this.staffId$)));
-    this.staff$.subscribe(g => console.log(this.staffId$)); 
+    this.staff$.subscribe(g => console.log(this.staffId$));
   }
   ngOnInit() {
     this.store.dispatch(StaffsActions.loadStaffs({ staffs: [] }));
