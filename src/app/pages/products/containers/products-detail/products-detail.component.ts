@@ -25,7 +25,7 @@ export class ProductsDetailComponent implements OnInit {
   ) {
     this.productId$ = +this.router.snapshot.params.productId;
     this.product$ = this.store.pipe(select(ProductsSelector.selectCurrentProduct(this.productId$)));
-    this.product$.subscribe(g => console.log(this.productId$)); 
+    this.product$.subscribe(g => console.log(this.productId$));
   }
   ngOnInit() {
     this.store.dispatch(ProductsActions.loadProducts({ products: [] }));
