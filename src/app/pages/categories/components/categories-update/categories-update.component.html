@@ -1,37 +1,13 @@
 <nb-card>
   <nb-card-header>
-    <label>Update Category</label>
+      <div class="title">
+          <label>Update Category</label>
+      </div>
   </nb-card-header>
   <nb-card-body>
-    <form [formGroup]="updateCategoryForm" method="POST">
-    <div class="row">
-      <div class="col-xs-12 col-md-12">
-        <input type="hidden" formControlName="id" class="form-control" name="id">
-        <input type="hidden" formControlName="createdBy" class="form-control" name="createdBy">
-        <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy">
-      </div>
-      <div class="col-xs-6 col-md-6">
-        <label>Category Name</label>
-        <input type="text" name="name" formControlName="name" class="form-control" placeholder="name">
-      </div>
-      <div class="col-xs-6 col-md-6">
-        <label>Category Remark</label>
-        <input type="text" name="note" formControlName="note" class="form-control" placeholder="note">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-6 col-md-6">
-        <label>Category Status</label>
-        <nb-select aria-required placeholder="Status" formControlName="status" name="status" fullWidth>
-          <nb-option value="on">On</nb-option>
-          <nb-option value="off">Off</nb-option>
-        </nb-select>
-      </div>
-    </div>
-  </form>
   </nb-card-body>
   <nb-card-footer>
-    <button nbButton outline status="danger">Close</button>
-    <button nbButton outline status="success">Save</button>
+      <button nbButton outline status="success" (click)="close()">Save</button>
+      <button nbButton outline status="danger"  (click)="close()">Cancel</button>
   </nb-card-footer>
 </nb-card>

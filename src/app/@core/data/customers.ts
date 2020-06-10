@@ -1,3 +1,5 @@
+import { IOrder } from './orders';
+
 export interface ICustomer {
     customerId: number;
     email: string;
@@ -26,4 +28,5 @@ export interface ICustomer {
     createdDateTime?: Date;
     lastUpdatedBy?: string;
     lastUpdatedDateTime?: Date;
+    orders: IOrder[];
 }

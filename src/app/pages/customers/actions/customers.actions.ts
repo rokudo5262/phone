@@ -1,10 +1,15 @@
 import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
-import { ICustomer } from '../../../@core/data';
+import { ICustomer } from '../../../@core/data/customers';
 
 export const loadCustomers = createAction(
     '[Customer/API] Load Customers',
     props<{ customers: ICustomer[] }>(),
+);
+
+export const getCustomerDetail = createAction(
+    '[Customer/API] Get Customer Detail',
+    props<{ customer: ICustomer }>(),
 );
 
 export const addCustomer = createAction(

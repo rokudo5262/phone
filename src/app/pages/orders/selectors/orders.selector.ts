@@ -22,7 +22,7 @@ export const OrdersSelector = {
   selectAllOrders,
   selectTotalOrders,
 };
-export const selectCurrentOrder = (orderCode) => createSelector(
+export const selectCurrentOrder = (orderId) => createSelector(
   selectOrderEntities,
-  (order) => order[orderCode],
+  (order) => order[orderId],
 );

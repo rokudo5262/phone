@@ -41,6 +41,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/stores',
   },
   {
+    title: 'FEATURES',
+    group: true,
+  },
+  {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
     link: '/pages/dashboard',

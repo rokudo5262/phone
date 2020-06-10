@@ -22,7 +22,7 @@ export const CategoriesSelector = {
   selectAllCategories,
   selectTotalCategories,
 };
-export const selectCurrentCategory = (category_id) => createSelector(
+export const selectCurrentCategory = (categoryId) => createSelector(
   selectCategoryEntities,
-  (category) => category[category_id],
+  (category) => category[categoryId],
 );

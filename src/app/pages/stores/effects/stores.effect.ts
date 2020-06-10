@@ -19,6 +19,16 @@ export class StoresEffect {
                     .loadStoresFailure({ errorMsg: err.message }))),
             )),
     ));
+    detail$ = createEffect(() => this.action$.pipe(
+        ofType(StoresActions.getStoreDetail),
+        mergeMap(() => this.storeservice.get_store_detail()
+            .pipe(
+                map((item: IStore) => StoresApiActions
+                    .getStoreDetailSuccess({ store: item })),
+                catchError(err => of(StoresApiActions
+                    .getStoreDetailFailure({ errorMsg: err.message }))),
+            )),
+    ));
     add$ = createEffect(() => this.action$.pipe(
         ofType(StoresActions.addStore),
         switchMap(({ store }) =>

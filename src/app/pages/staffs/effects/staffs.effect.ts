@@ -18,6 +18,16 @@ export class StaffsEffect {
                     .loadStaffsFailure({ errorMsg: err.message }))),
             )),
     ));
+    detail$ = createEffect(() => this.action$.pipe(
+        ofType(StaffsActions.getStaffDetail),
+        mergeMap(() => this.staffsService.get_staff_detail()
+            .pipe(
+                map((item: IStaff) => StaffsApiActions
+                    .getStaffDetailSuccess({ staff: item })),
+                catchError(err => of(StaffsApiActions
+                    .getStaffDetailFailure({ errorMsg: err.message }))),
+            )),
+    ));
     add$ = createEffect(() => this.action$.pipe(
         ofType(StaffsActions.addStaff),
         switchMap(({ staff }) =>

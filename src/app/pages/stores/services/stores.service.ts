@@ -23,16 +23,25 @@ export class StoresService {
   load_stores(): Observable<IStore[]> {
     return this.http.get<IStore[]>(this.API_PATH, this.options);
   }
+  // ----------------------------------------------------------------------------------------
+  get_store_detail(): Observable<IStore> {
+    return this.http.get<IStore>(this.API_PATH, this.options);
+  }
+  // ----------------------------------------------------------------------------------------
   add_store(store: IStore) {
     return this.http.post<IStore>(this.API_PATH, store, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   update_store(changes: Partial<IStore>) {
     return this.http.put<IStore>(this.API_PATH + '/' + changes.storeId, changes, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   remove_store(storeId: number) {
     return this.http.delete<IStore>(this.API_PATH + '/' + storeId, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   delete_store(changes: Partial<IStore>) {
     return this.http.put<IStore>(this.API_PATH + '/' + changes.storeId, changes, this.options);
   }
+  // ----------------------------------------------------------------------------------------
 }

@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { IOrder } from '../../../../@core/data';
+import { Store, select } from '@ngrx/store';
+import { OrdersSelector } from '../../selectors';
+import { OrdersActions } from '../../actions';
+import { NbDialogService } from '@nebular/theme';
+import { OrdersUpdateComponent } from '../../components/orders-update/orders-update.component';
 
 @Component({
   selector: 'ngx-orders-detail',
@@ -7,12 +13,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./orders-detail.component.scss'],
 })
 export class OrdersDetailComponent implements OnInit {
+  @Input() order: IOrder;
+  order$;
+  orderId$: number;
   constructor(
     private route: Router,
-  ) { }
+    private router: ActivatedRoute,
+    private store: Store<IOrder>,
+    private dialogService: NbDialogService,
+  ) {
+    this.orderId$ = +this.router.snapshot.params.customerId;
+    this.order$ = this.store.pipe(select(OrdersSelector.selectCurrentOrder(this.orderId$)));
+    this.order$.subscribe(g => console.log(this.orderId$));
+  }
   ngOnInit() {
+    this.store.dispatch(OrdersActions.loadOrders({ orders: [] }));
   }
   update() {
+    this.dialogService.open(OrdersUpdateComponent);
   }
   delete() {
   }

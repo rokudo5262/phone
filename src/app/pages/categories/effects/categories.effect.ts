@@ -18,6 +18,16 @@ export class CategoriesEffects {
                     .loadCategoriesFailure({ errorMsg: err.message }))),
             )),
     ));
+    detail$ = createEffect(() => this.action$.pipe(
+        ofType(CategoriesActions.getCategoryDetail),
+        mergeMap(() => this.categoriesservice.get_category_detail()
+            .pipe(
+                map((item: ICategory) => CategoriesApiActions
+                    .getCategoryDetailSuccess({ category: item })),
+                catchError(err => of(CategoriesApiActions
+                    .getCategoryDetailFailure({ errorMsg: err.message }))),
+            )),
+    ));
     add$ = createEffect(() => this.action$.pipe(
         ofType(CategoriesActions.addCategory),
         switchMap(({ category }) =>

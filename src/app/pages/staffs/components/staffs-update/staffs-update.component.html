@@ -1,11 +1,13 @@
 <nb-card>
     <nb-card-header>
-        <label>Update Staff</label>
+        <div class="title">
+            <label>Update Staff</label>
+        </div>
     </nb-card-header>
     <nb-card-body>
     </nb-card-body>
     <nb-card-footer>
-        <button nbButton outline stats="success">Save</button>
-        <button nbButton outline stats="danger">Cancel</button>
+        <button nbButton outline status="success" (click)="close()">Save</button>
+        <button nbButton outline status="danger"  (click)="close()">Cancel</button>
     </nb-card-footer>
-</nb-card>
+  </nb-card>

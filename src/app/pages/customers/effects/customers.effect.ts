@@ -4,10 +4,10 @@ import { mergeMap, catchError, map, switchMap } from 'rxjs/operators';
 import { empty, of } from 'rxjs';
 import { CustomersService } from '../services/customers.service';
 import { CustomersActions, CustomersApiActions } from '../actions';
-import { ICustomer } from '../../../@core/data';
+import { ICustomer } from '../../../@core/data/customers';
 
 @Injectable()
-export class BrandsEffect {
+export class CustomersEffect {
     load$ = createEffect(() => this.action$.pipe(
         ofType(CustomersActions.loadCustomers),
         mergeMap(() => this.customersService.load_customers()
@@ -16,6 +16,16 @@ export class BrandsEffect {
                     .loadCustomersSuccess({ customers: items })),
                 catchError(err => of(CustomersApiActions
                     .loadCustomersFailure({ errorMsg: err.message }))),
+            )),
+    ));
+    detail$ = createEffect(() => this.action$.pipe(
+        ofType(CustomersActions.getCustomerDetail),
+        mergeMap(() => this.customersService.get_customer_detail()
+            .pipe(
+                map((item: ICustomer) => CustomersApiActions
+                    .getCustomerDetailSuccess({ customer: item })),
+                catchError(err => of(CustomersApiActions
+                    .getCustomerDetailFailure({ errorMsg: err.message }))),
             )),
     ));
     add$ = createEffect(() => this.action$.pipe(

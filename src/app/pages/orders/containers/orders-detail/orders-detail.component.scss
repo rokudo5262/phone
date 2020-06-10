@@ -1,5 +1,8 @@
-button[nbButton] {
-  display: block;
-  float: right;
-  margin-left: 15px;
+.title {
+  font-size: 30px;
+  margin: auto 0;
+}
+.row {
+  margin: 0;
+  justify-content: space-between;
 }

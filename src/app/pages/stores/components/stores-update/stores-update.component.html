@@ -1,11 +1,13 @@
 <nb-card>
   <nb-card-header>
-    <label>Update Store</label>
+      <div class="title">
+          <label>Update Store</label>
+      </div>
   </nb-card-header>
   <nb-card-body>
   </nb-card-body>
   <nb-card-footer>
-    <button nbButton status="danger">Close</button>
-    <button nbButton status="success">Save</button>
+      <button nbButton outline status="success" (click)="close()">Save</button>
+      <button nbButton outline status="danger"  (click)="close()">Cancel</button>
   </nb-card-footer>
 </nb-card>

@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { IStaff } from '../../../@core/data';
+import { IStaff } from '../../../@core/data/staffs';
 
 /**
  * Load Staff Api Actions
@@ -12,6 +12,17 @@ export const loadStaffsFailure = createAction(
     '[Staff/API] Load Staffs Failure',
     props<{ errorMsg: any }>(),
 );
+/**
+ * Get Staff Detail Api Actions
+ */
+export const getStaffDetailSuccess = createAction(
+    '[Staff/API] Get Staff Detail Success',
+    props<{ staff: IStaff }>(),
+  );
+  export const getStaffDetailFailure = createAction(
+    '[Staff/API] Get Staff Detail Failure',
+    props<{ errorMsg: any }>(),
+  );
 /**
  * Add Staff Api Actions
  */

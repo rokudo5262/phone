@@ -2,7 +2,6 @@ import { createReducer, on } from '@ngrx/store';
 import { StaffsActions, StaffsApiActions } from '../actions';
 import { staffAdapter, staffInitialState } from '../states/staffs.state';
 
-
 export const staffsFeatureKey = 'staffs';
 
 export const reducer = createReducer(
@@ -11,8 +10,14 @@ export const reducer = createReducer(
         StaffsActions.loadStaffs,
         StaffsApiActions.loadStaffsSuccess,
         (state, { staffs }) => {
-            staffs = staffs.filter(x => x.deleted === false);
             return staffAdapter.addMany(staffs, state);
+        },
+    ),
+    on(
+        StaffsActions.getStaffDetail,
+        StaffsApiActions.getStaffDetailSuccess,
+        (state, { staff }) => {
+            return staffAdapter.addOne(staff, state);
         },
     ),
     on(

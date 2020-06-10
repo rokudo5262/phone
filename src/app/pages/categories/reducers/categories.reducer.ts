@@ -10,8 +10,14 @@ export const reducer = createReducer(
         CategoriesActions.loadCategories,
         CategoriesApiActions.loadCategoriesSuccess,
         (state, { categories }) => {
-            categories = categories.filter(x => x.deleted === false);
             return categoryAdapter.addMany(categories, state);
+        },
+    ),
+    on(
+        CategoriesActions.getCategoryDetail,
+        CategoriesApiActions.getCategoryDetailSuccess,
+        (state, { category }) =>  {
+            return categoryAdapter.addOne(category, state);
         },
     ),
     on(

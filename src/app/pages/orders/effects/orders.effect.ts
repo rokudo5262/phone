@@ -19,6 +19,16 @@ export class OrdersEffect {
                     .loadOrdersFailure({ errorMsg: err.message }))),
             )),
     ));
+    detail$ = createEffect(() => this.action$.pipe(
+        ofType(OrdersActions.getOrderDetail),
+        mergeMap(() => this.orderservice.get_order_detail()
+            .pipe(
+                map((item: IOrder) => OrdersApiActions
+                    .getOrderDetailSuccess({ order: item })),
+                catchError(err => of(OrdersApiActions
+                    .getOrderDetailFailure({ errorMsg: err.message }))),
+            )),
+    ));
     add$ = createEffect(() => this.action$.pipe(
         ofType(OrdersActions.addOrder),
         switchMap(({ order }) =>

@@ -1,10 +1,15 @@
 import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
-import { IBrand } from '../../../@core/data';
+import { IBrand } from '../../../@core/data/brands';
 
 export const loadBrands = createAction(
     '[Brand/API] Load Brands',
     props<{ brands: IBrand[] }>(),
+);
+
+export const getBrandDetail = createAction(
+    '[Brand/API] Get Brand Detail',
+    props<{ brand: IBrand }>(),
 );
 
 export const addBrand = createAction(

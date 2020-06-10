@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Store, select } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { CustomersSelector } from '../../selectors/customers.selector';
 import { CustomersActions } from '../../actions';
 import { ICustomer } from '../../../../@core/data/customers';
+import { CustomersSelector } from '../../selectors';
 
 @Component({
   selector: 'ngx-customers-smart-table',

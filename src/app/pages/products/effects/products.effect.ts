@@ -19,6 +19,16 @@ export class ProductsEffect {
                     .loadProductsFailure({ errorMsg: err.message }))),
             )),
     ));
+    detail$ = createEffect(() => this.action$.pipe(
+        ofType(ProductsActions.getProductDetail),
+        mergeMap(() => this.productsService.get_product_detail()
+            .pipe(
+                map((item: IProduct) => ProductsApiActions
+                    .getProductDetailSuccess({ product: item })),
+                catchError(err => of(ProductsApiActions
+                    .getProductDetailFailure({ errorMsg: err.message }))),
+            )),
+    ));
     add$ = createEffect(() => this.action$.pipe(
         ofType(ProductsActions.addProduct),
         switchMap(({ product }) =>

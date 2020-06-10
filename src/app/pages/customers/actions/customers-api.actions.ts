@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ICustomer } from '../../../@core/data';
+import { ICustomer } from '../../../@core/data/customers';
 
 /**
  * Load Customers Api Actions
@@ -12,6 +12,17 @@ export const loadCustomersFailure = createAction(
     '[Customer/API] Load Customers Failure',
     props<{ errorMsg: any }>(),
 );
+/**
+ * Get Customer Detail Api Actions
+ */
+export const getCustomerDetailSuccess = createAction(
+    '[Customer/API] Get Customer Detail Success',
+    props<{ customer: ICustomer }>(),
+  );
+  export const getCustomerDetailFailure = createAction(
+    '[Customer/API] Get Customer Detail Failure',
+    props<{ errorMsg: any }>(),
+  );
 /**
  * Add Customer Api Actions
  */

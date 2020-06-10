@@ -9,7 +9,7 @@ const routes: Routes = [{
   component: CategoriesComponent,
   children: [
     { path: 'library', component: CategoriesPageComponent },
-    { path: 'category/:id', component: CategoriesDetailComponent },
+    { path: 'category/:categoryId', component: CategoriesDetailComponent },
     { path: '', redirectTo: 'library', pathMatch: 'full' },
   ],
 }];

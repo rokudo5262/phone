@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { NbDialogService } from '@nebular/theme';
 import { IStore } from '../../../../@core/data/stores';
 import { StoresSelector } from '../../selectors/stores.selector';
 import { StoresActions } from '../../actions';
-import { StoresAddComponent } from '../stores-add/stores-add.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-stores-smart-table',
@@ -58,19 +57,16 @@ export class StoresSmartTableComponent implements OnInit {
   stores$: Observable<IStore[]>;
   dialogRef: any;
   constructor(
+    private route: Router,
     private store: Store<IStore>,
-    private dialogService: NbDialogService,
   ) {
     this.stores$ = this.store.pipe(select(StoresSelector.selectAllStores));
     this.stores$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
-    this.onRefresh();
-  }
-  onRefresh() {
     this.store.dispatch(StoresActions.loadStores({ stores: [] }));
-}
-  open() {
-    this.dialogService.open(StoresAddComponent);
+  }
+  navigateToStoreDetail(event) {
+    this.route.navigate(['pages/stores/store/', event.data.storeId]);
   }
 }

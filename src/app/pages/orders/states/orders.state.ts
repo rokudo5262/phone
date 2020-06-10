@@ -1,7 +1,6 @@
 import { EntityState, createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 import { IOrder } from '../../../@core/data/orders';
 
-
 export interface OrdersState extends EntityState<IOrder> {
   selectedOrderID: number | null;
 }

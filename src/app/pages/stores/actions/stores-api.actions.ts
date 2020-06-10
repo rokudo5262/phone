@@ -13,6 +13,17 @@ export const loadStoresFailure = createAction(
   props<{ errorMsg: any }>(),
 );
 /**
+ * Get Store Detail Api Actions
+ */
+export const getStoreDetailSuccess = createAction(
+  '[Store/API] Get Store Detail Success',
+  props<{ store: IStore }>(),
+);
+export const getStoreDetailFailure = createAction(
+  '[Store/API] Get Store Detail Failure',
+  props<{ errorMsg: any }>(),
+);
+/**
  * Add Store Api Actions
  */
 export const addStoreSuccess = createAction(

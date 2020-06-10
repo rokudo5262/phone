@@ -13,6 +13,17 @@ export const loadBrandsFailure = createAction(
     props<{ errorMsg: any }>(),
 );
 /**
+ * Get Brand Detail Api Actions
+ */
+export const getBrandDetailSuccess = createAction(
+    '[Brand/API] Get Brand Detail Success',
+    props<{ brand: IBrand }>(),
+  );
+  export const getBrandDetailFailure = createAction(
+    '[Brand/API] Get Brand Detail Failure',
+    props<{ errorMsg: any }>(),
+  );
+/**
  * Add Brand Api Actions
  */
 export const addBrandSuccess = createAction(

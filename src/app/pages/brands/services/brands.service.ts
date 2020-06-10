@@ -24,16 +24,25 @@ export class BrandsService {
     load_brands(): Observable<IBrand[]> {
         return this.http.get<IBrand[]>(this.API_PATH, this.options);
     }
+    // ----------------------------------------------------------------------------------------
+    get_brand_detail(): Observable<IBrand> {
+        return this.http.get<IBrand>(this.API_PATH, this.options);
+    }
+    // ----------------------------------------------------------------------------------------
     add_brand(brand: IBrand) {
         return this.http.post<IBrand>(this.API_PATH, brand, this.options);
     }
+    // ----------------------------------------------------------------------------------------
     update_brand(changes: Partial<IBrand>) {
         return this.http.put<IBrand>(this.API_PATH + '/' + changes.brandId, changes, this.options);
     }
+    // ----------------------------------------------------------------------------------------
     delete_brand(changes: Partial<IBrand>) {
         return this.http.put<IBrand>(this.API_PATH + '/' + changes.brandId, changes, this.options);
     }
+    // ----------------------------------------------------------------------------------------
     remove_brand(brandid: number) {
         return this.http.delete<IBrand>(this.API_PATH + '/' + brandid, this.options);
     }
+    // ----------------------------------------------------------------------------------------
 }

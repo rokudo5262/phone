@@ -1,3 +1,5 @@
+import { IOrderItem } from './orderitems';
+
 export interface IOrder {
     orderId: number;
     customerId: number;
@@ -6,4 +8,5 @@ export interface IOrder {
     createdDateTime?: Date;
     lastUpdatedBy?: string;
     lastUpdatedDateTime?: Date;
+    orderItems: IOrderItem[];
 }

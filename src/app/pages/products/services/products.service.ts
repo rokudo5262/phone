@@ -23,16 +23,25 @@ export class ProductsService {
   load_products(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.API_PATH, this.options);
   }
+  // ----------------------------------------------------------------------------------------
+  get_product_detail(): Observable<IProduct> {
+    return this.http.get<IProduct>(this.API_PATH, this.options);
+  }
+  // ----------------------------------------------------------------------------------------
   add_product(product: IProduct) {
     return this.http.post<IProduct>(this.API_PATH, product, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   update_product(changes: Partial<IProduct>) {
     return this.http.put<IProduct>(this.API_PATH + '/' + changes.productId, changes, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   remove_product(productId: number) {
     return this.http.delete<IProduct>(this.API_PATH + '/' + productId, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   delete_product(changes: Partial<IProduct>) {
     return this.http.put<IProduct>(this.API_PATH + '/' + changes.productId, changes, this.options);
   }
+  // ----------------------------------------------------------------------------------------
 }

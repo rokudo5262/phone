@@ -18,6 +18,16 @@ export class BrandsEffect {
                     .loadBrandsFailure({ errorMsg: err.message }))),
             )),
     ));
+    detail$ = createEffect(() => this.action$.pipe(
+        ofType(BrandsActions.getBrandDetail),
+        mergeMap(() => this.bransService.get_brand_detail()
+            .pipe(
+                map((item: IBrand) => BrandssApiActions
+                    .getBrandDetailSuccess({ brand: item })),
+                catchError(err => of(BrandssApiActions
+                    .getBrandDetailFailure({ errorMsg: err.message }))),
+            )),
+    ));
     add$ = createEffect(() => this.action$.pipe(
         ofType(BrandsActions.addBrand),
         switchMap(({ brand }) =>

@@ -10,8 +10,14 @@ export const reducer = createReducer(
         ProductsActions.loadProducts,
         ProductsApiActions.loadProductsSuccess,
         (state, { products }) => {
-            products = products.filter(x => x.deleted === false);
             return productAdapter.addMany(products, state);
+        },
+    ),
+    on(
+        ProductsActions.getProductDetail,
+        ProductsApiActions.getProductDetailSuccess,
+        (state, { product }) =>  {
+            return productAdapter.addOne(product, state);
         },
     ),
     on(

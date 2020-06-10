@@ -23,13 +23,16 @@ import { CustomersRoutingModule } from './customers-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { FeatureKey, reducer } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { StaffsEffect } from '../staffs/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../../environments/environment';
 import { CookieService } from 'ngx-cookie-service';
-import { CustomersPageComponent, CustomersDetailComponent } from './containers';
-import { CustomersAddComponent, CustomersUpdateComponent, CustomersSmartTableComponent } from './components';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { CustomersPageComponent } from './containers/customers-page/customers-page.component';
+import { CustomersAddComponent } from './components/customers-add/customers-add.component';
+import { CustomersUpdateComponent } from './components/customers-update/customers-update.component';
+import { CustomersDetailComponent } from './containers/customers-detail/customers-detail.component';
+import { CustomersSmartTableComponent } from './components/customers-smart-table/customers-smart-table.component';
+import { CustomersEffect } from './effects/customers.effect';
 @NgModule({
     imports: [
         NbTreeGridModule,
@@ -58,7 +61,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
         // -------------------------------------------------------------
         StoreModule.forFeature(FeatureKey, reducer),
         // -------------------------------------------------------------
-        EffectsModule.forFeature([StaffsEffect]),
+        EffectsModule.forFeature([CustomersEffect]),
         // -------------------------------------------------------------
         StoreDevtoolsModule.instrument({
             maxAge: 25,

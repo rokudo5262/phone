@@ -10,8 +10,14 @@ export const reducer = createReducer(
         BrandsActions.loadBrands,
         BrandssApiActions.loadBrandsSuccess,
         (state, { brands }) => {
-            brands = brands.filter(x => x.deleted === false);
             return brandAdapter.addMany(brands, state);
+        },
+    ),
+    on(
+        BrandsActions.getBrandDetail,
+        BrandssApiActions.getBrandDetailSuccess,
+        (state, { brand }) =>  {
+            return brandAdapter.addOne(brand, state);
         },
     ),
     on(

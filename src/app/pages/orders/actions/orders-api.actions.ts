@@ -13,6 +13,17 @@ export const loadOrdersFailure = createAction(
   props<{ errorMsg: any }>(),
 );
 /**
+ * Get Order Detail Api Actions
+ */
+export const getOrderDetailSuccess = createAction(
+  '[Order/API] Get Order Detail Success',
+  props<{ order: IOrder }>(),
+);
+export const getOrderDetailFailure = createAction(
+  '[Order/API] Get Order Detail Failure',
+  props<{ errorMsg: any }>(),
+);
+/**
  * Add Order Api Actions
  */
 export const addOrderSuccess = createAction(

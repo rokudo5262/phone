@@ -13,6 +13,17 @@ export const loadProductsFailure = createAction(
   props<{ errorMsg: any }>(),
 );
 /**
+ * Get Product Detail Api Actions
+ */
+export const getProductDetailSuccess = createAction(
+  '[Product/API] Get Product Detail Success',
+  props<{ product: IProduct }>(),
+);
+export const getProductDetailFailure = createAction(
+  '[Product/API] Get Product Detail Failure',
+  props<{ errorMsg: any }>(),
+);
+/**
  * Add Product Api Actions
  */
 export const addProductSuccess = createAction(

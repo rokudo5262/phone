@@ -13,6 +13,17 @@ export const loadCategoriesFailure = createAction(
   props<{ errorMsg: any }>(),
 );
 /**
+ * Get Category Detail Api Actions
+ */
+export const getCategoryDetailSuccess = createAction(
+  '[Category/API] Get Category Detail Success',
+  props<{ category: ICategory }>(),
+);
+export const getCategoryDetailFailure = createAction(
+  '[Category/API] Get Category Detail Failure',
+  props<{ errorMsg: any }>(),
+);
+/**
  * Add Category Api Actions
  */
 export const addCategorySuccess = createAction(

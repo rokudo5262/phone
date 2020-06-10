@@ -10,8 +10,14 @@ export const reducer = createReducer(
         OrdersActions.loadOrders,
         OrdersApiActions.loadOrdersSuccess,
         (state, { orders }) => {
-            orders = orders.filter(x => x.deleted === false);
             return orderAdapter.addMany(orders, state);
+        },
+    ),
+    on(
+        OrdersActions.getOrderDetail,
+        OrdersApiActions.getOrderDetailSuccess,
+        (state, { order }) =>  {
+            return orderAdapter.addOne(order, state);
         },
     ),
     on(

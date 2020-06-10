@@ -23,16 +23,25 @@ export class OrdersService {
   load_orders(): Observable<IOrder[]> {
     return this.http.get<IOrder[]>(this.API_PATH, this.options);
   }
+  // ----------------------------------------------------------------------------------------
+  get_order_detail(): Observable<IOrder> {
+    return this.http.get<IOrder>(this.API_PATH, this.options);
+  }
+  // ----------------------------------------------------------------------------------------
   add_order(order: IOrder) {
     return this.http.post<IOrder>(this.API_PATH, order, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   update_order(changes: Partial<IOrder>) {
     return this.http.put<IOrder>(this.API_PATH + '/' + changes.orderId, changes, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   remove_order(orderId: number) {
     return this.http.delete<IOrder>(this.API_PATH + '/' + orderId, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   delete_order(changes: Partial<IOrder>) {
     return this.http.put<IOrder>(this.API_PATH + '/' + changes.orderId, changes, this.options);
   }
+  // ----------------------------------------------------------------------------------------
 }

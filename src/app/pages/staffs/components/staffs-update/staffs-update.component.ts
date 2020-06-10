@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { NbDialogRef } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-staffs-update',
@@ -6,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './staffs-update.component.html',
 })
 export class StaffsUpdateComponent implements OnInit {
+  public updateStaffForm: FormGroup;
+  constructor(
+    private dialogRef: NbDialogRef<StaffsUpdateComponent>,
+  ) { }
   ngOnInit() {
+  }
+  close() {
+    this.dialogRef.close();
   }
 }

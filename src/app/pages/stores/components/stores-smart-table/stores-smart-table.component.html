@@ -1,1 +1,3 @@
-<ng2-smart-table [settings]="settings" [source]="stores$ | async"></ng2-smart-table>
+<ng2-smart-table [settings]="settings" [source]="stores$ | async"
+(userRowSelect)="navigateToStoreDetail($event)"
+></ng2-smart-table>

@@ -23,16 +23,25 @@ export class CategoriesService {
   load_categories(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>(this.API_PATH, this.options);
   }
+  // ----------------------------------------------------------------------------------------
+  get_category_detail(): Observable<ICategory> {
+    return this.http.get<ICategory>(this.API_PATH, this.options);
+  }
+  // ----------------------------------------------------------------------------------------
   add_category(category: ICategory) {
     return this.http.post<ICategory>(this.API_PATH, category, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   update_category(changes: Partial<ICategory>) {
     return this.http.put<ICategory>(this.API_PATH + '/' + changes.categoryId, changes, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   delete_category(changes: Partial<ICategory>) {
     return this.http.put<ICategory>(this.API_PATH + '/' + changes.categoryId, changes, this.options);
   }
+  // ----------------------------------------------------------------------------------------
   remove_category(categoryId: number) {
     return this.http.delete<ICategory>(this.API_PATH + '/' + categoryId, this.options);
   }
+  // ----------------------------------------------------------------------------------------
 }
