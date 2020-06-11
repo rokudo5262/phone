@@ -31,6 +31,7 @@ import { ProductsEffect } from './effects';
 import { environment } from '../../../environments/environment';
 import { ThemeModule } from '../../@theme/theme.module';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ProductPreviewComponent } from './components/products-preview/products-preview.component';
 
 @NgModule({
     imports: [
@@ -72,6 +73,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
         ProductsUpdateComponent,
         ProductsSmartTableComponent,
         ProductsDetailComponent,
+        ProductPreviewComponent,
     ],
     entryComponents: [
         ProductsAddComponent,

@@ -2,9 +2,10 @@
     <nb-card-header>
         <div class="title">
             <label>Customer Detail</label>
-        </div>>
+        </div>
     </nb-card-header>
     <nb-card-body>
+        <ngx-customers-preview [customer]="customer$ | async"></ngx-customers-preview>
     </nb-card-body>
     <nb-card-footer>
         <button nbButton outline status="success" (click)="update()">Update</button>

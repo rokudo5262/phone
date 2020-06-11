@@ -32,6 +32,7 @@ import { FeatureKey, reducer } from './reducers';
 import { OrdersUpdateComponent } from './components';
 import { ThemeModule } from '../../@theme/theme.module';
 import { environment } from '../../../environments/environment.prod';
+import { OrdersPreviewComponent } from './components/orders-preview/orders-preview.component';
 
 @NgModule({
     imports: [
@@ -70,6 +71,7 @@ import { environment } from '../../../environments/environment.prod';
         OrdersSmartTableComponent,
         OrdersUpdateComponent,
         OrdersDetailComponent,
+        OrdersPreviewComponent,
     ],
     entryComponents: [
         OrdersAddComponent,

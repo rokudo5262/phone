@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BrandsActions } from '../../actions';
 import { BrandsSelector } from '../../selectors';
 import { select, Store } from '@ngrx/store';
@@ -13,7 +13,6 @@ import { NbDialogService } from '@nebular/theme';
   templateUrl: './brands-detail.component.html',
 })
 export class BrandsDetailComponent implements OnInit {
-  @Input() brand: IBrand;
   brand$;
   brandId$: number;
   constructor(
@@ -28,7 +27,6 @@ export class BrandsDetailComponent implements OnInit {
   }
   ngOnInit() {
     this.store.dispatch(BrandsActions.loadBrands({ brands: [] }));
-    // this.store.dispatch(BrandsActions.getBrandDetail({ brand: this.brand }));
   }
   update() {
     this.dialogService.open(BrandsUpdateComponent);

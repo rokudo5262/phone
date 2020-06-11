@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ICategory } from '../../../../@core/data/categories';
@@ -13,7 +13,6 @@ import { NbDialogService } from '@nebular/theme';
   templateUrl: './categories-detail.component.html',
 })
 export class CategoriesDetailComponent implements OnInit {
-  @Input() category: ICategory;
   category$;
   categoryId$: number;
   constructor(

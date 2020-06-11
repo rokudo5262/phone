@@ -33,6 +33,7 @@ import { CustomersUpdateComponent } from './components/customers-update/customer
 import { CustomersDetailComponent } from './containers/customers-detail/customers-detail.component';
 import { CustomersSmartTableComponent } from './components/customers-smart-table/customers-smart-table.component';
 import { CustomersEffect } from './effects/customers.effect';
+import { CustomersPreviewComponent } from './components/customers-preview/customers-preview.component';
 @NgModule({
     imports: [
         NbTreeGridModule,
@@ -76,6 +77,7 @@ import { CustomersEffect } from './effects/customers.effect';
         CustomersUpdateComponent,
         CustomersDetailComponent,
         CustomersSmartTableComponent,
+        CustomersPreviewComponent,
     ],
     entryComponents: [
         CustomersAddComponent,

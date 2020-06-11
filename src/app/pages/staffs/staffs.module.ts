@@ -20,8 +20,6 @@ import { NbAuthModule } from '@nebular/auth';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { StaffsComponent } from './staffs.component';
 import { StaffsRoutingModule } from './staffs-routing.module';
-import { StaffsPageComponent, StaffsDetailComponent } from './containers';
-import { StaffsUpdateComponent, StaffsSmartTableComponent, StaffsAddComponent } from './components';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StaffsEffect } from './effects/staffs.effect';
@@ -29,6 +27,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../../environments/environment';
 import { FeatureKey, reducer } from './reducers';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { StaffsPageComponent } from './containers/staffs-page/staffs-page.component';
+import { StaffsAddComponent } from './components/staffs-add/staffs-add.component';
+import { StaffsUpdateComponent } from './components/staffs-update/staffs-update.component';
+import { StaffsDetailComponent } from './containers/staffs-detail/staffs-detail.component';
+import { StaffsSmartTableComponent } from './components/staffs-smart-table/staffs-smart-table.component';
+import { StaffsPreviewComponent } from './components/staffs-preview/staffs-preview.component';
 
 @NgModule({
     imports: [
@@ -73,8 +77,11 @@ import { NgSelectModule } from '@ng-select/ng-select';
         StaffsUpdateComponent,
         StaffsDetailComponent,
         StaffsSmartTableComponent,
+        StaffsPreviewComponent,
     ],
     entryComponents: [
+        StaffsAddComponent,
+        StaffsUpdateComponent,
     ],
     providers: [
     ],

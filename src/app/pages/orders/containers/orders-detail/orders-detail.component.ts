@@ -13,7 +13,6 @@ import { OrdersUpdateComponent } from '../../components/orders-update/orders-upd
   styleUrls: ['./orders-detail.component.scss'],
 })
 export class OrdersDetailComponent implements OnInit {
-  @Input() order: IOrder;
   order$;
   orderId$: number;
   constructor(
@@ -22,7 +21,7 @@ export class OrdersDetailComponent implements OnInit {
     private store: Store<IOrder>,
     private dialogService: NbDialogService,
   ) {
-    this.orderId$ = +this.router.snapshot.params.customerId;
+    this.orderId$ = +this.router.snapshot.params.orderId;
     this.order$ = this.store.pipe(select(OrdersSelector.selectCurrentOrder(this.orderId$)));
     this.order$.subscribe(g => console.log(this.orderId$));
   }

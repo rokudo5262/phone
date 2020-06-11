@@ -13,7 +13,6 @@ import { StaffsUpdateComponent } from '../../components/staffs-update/staffs-upd
   templateUrl: './staffs-detail.component.html',
 })
 export class StaffsDetailComponent implements OnInit {
-  @Input() staff: IStaff;
   staff$;
   staffId$: number;
   constructor(

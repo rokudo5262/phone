@@ -33,6 +33,7 @@ import { StoresUpdateComponent } from './components/stores-update/stores-update.
 import { StoresDetailComponent } from './containers/stores-detail/stores-detail.component';
 import { StoresSmartTableComponent } from './components/stores-smart-table/stores-smart-table.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { StoresPreviewComponent } from './components/stores-preview/stores-preview.component';
 
 @NgModule({
     imports: [
@@ -76,6 +77,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
         StoresUpdateComponent,
         StoresDetailComponent,
         StoresSmartTableComponent,
+        StoresPreviewComponent,
     ],
     entryComponents: [
         StoresAddComponent,

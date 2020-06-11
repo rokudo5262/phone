@@ -34,6 +34,7 @@ import { CategoriesUpdateComponent } from './components/categories-update/catego
 import { CategoriesPageComponent } from './containers/categories-page/categories-page.component';
 import { CategoriesDetailComponent } from './containers/categories-detail/categories-detail.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { CategoriesPreviewComponent } from './components/categories-preview/categories-preview.component';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
         CategoriesAddComponent,
         CategoriesUpdateComponent,
         CategoriesDetailComponent,
+        CategoriesPreviewComponent,
     ],
     entryComponents: [
         CategoriesAddComponent,

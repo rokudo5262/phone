@@ -33,6 +33,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../../environments/environment';
 import { CookieService } from 'ngx-cookie-service';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { BrandsPreviewComponent } from './components/brands-preview/brands-preview.component';
 
 @NgModule({
     imports: [
@@ -78,6 +79,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
         BrandsAddComponent,
         BrandsDetailComponent,
         BrandsUpdateComponent,
+        BrandsPreviewComponent,
     ],
     entryComponents: [
         BrandsAddComponent,

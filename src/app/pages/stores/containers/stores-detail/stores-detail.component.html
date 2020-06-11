@@ -5,6 +5,7 @@
   </div>
   </nb-card-header>
   <nb-card-body>
+    <ngx-stores-preview [store]="store$ | async"></ngx-stores-preview>
   </nb-card-body>
   <nb-card-footer>
       <button nbButton outline status="success" (click)="update()">Update</button>

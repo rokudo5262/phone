@@ -36,8 +36,8 @@ export class StaffsSmartTableComponent implements OnInit {
         type: 'number',
         editable: false,
       },
-      staffName: {
-        title: 'Staff Name',
+      email: {
+        title: 'email',
         filter: true,
         type: 'string',
         editable: true,
