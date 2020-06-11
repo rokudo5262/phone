@@ -1,10 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IProduct } from '../../../../@core/data/products';
 import { Store, select } from '@ngrx/store';
 import { ProductsSelector } from '../../selectors';
 import { ProductsActions } from '../../actions';
-import { IStaff } from '../../../../@core/data';
 import { NbDialogService } from '@nebular/theme';
 import { ProductsUpdateComponent } from '../../components/products-update/products-update.component';
 
@@ -14,7 +13,6 @@ import { ProductsUpdateComponent } from '../../components/products-update/produc
   styleUrls: ['./products-detail.component.scss'],
 })
 export class ProductsDetailComponent implements OnInit {
-  @Input() staff: IStaff;
   product$;
   productId$: number;
   constructor(

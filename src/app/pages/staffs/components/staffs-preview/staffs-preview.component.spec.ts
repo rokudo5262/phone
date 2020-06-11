@@ -7,7 +7,7 @@ describe('StaffsPreviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StaffsPreviewComponent ]
+      declarations: [ StaffsPreviewComponent ],
     })
     .compileComponents();
   }));

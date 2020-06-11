@@ -7,7 +7,7 @@ describe('CustomersPreviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomersPreviewComponent ]
+      declarations: [ CustomersPreviewComponent ],
     })
     .compileComponents();
   }));

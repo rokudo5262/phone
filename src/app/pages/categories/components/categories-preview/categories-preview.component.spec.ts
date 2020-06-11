@@ -7,9 +7,9 @@ describe('CategoriesPreviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CategoriesPreviewComponent ]
+      declarations: [CategoriesPreviewComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
