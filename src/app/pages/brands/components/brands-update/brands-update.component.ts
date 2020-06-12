@@ -40,7 +40,7 @@ export class BrandsUpdateComponent implements OnInit {
   save(item) {
     const update = {
       id: item.id,
-      changes: item
+      changes: item,
     };
     this.store.dispatch(BrandsActions.updateBrand({ update: update }));
     this.close();
