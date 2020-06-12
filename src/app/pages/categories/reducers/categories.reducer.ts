@@ -36,6 +36,6 @@ export const reducer = createReducer(
     on(
         CategoriesActions.removeCategory,
         CategoriesApiActions.removeCategorySuccess,
-        (state, { category_id }) => categoryAdapter.removeOne(category_id, state),
+        (state, { categoryId }) => categoryAdapter.removeOne(categoryId, state),
     ),
 );

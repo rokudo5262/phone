@@ -36,6 +36,6 @@ export const reducer = createReducer(
     on(
         StaffsActions.removeStaff,
         StaffsApiActions.removeStaffSuccess,
-        (state, { staffid }) => staffAdapter.removeOne(staffid, state),
+        (state, { staffId }) => staffAdapter.removeOne(staffId, state),
     ),
 );

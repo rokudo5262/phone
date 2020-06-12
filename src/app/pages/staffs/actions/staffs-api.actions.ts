@@ -60,7 +60,7 @@ export const deleteStaffFailure = createAction(
  */
 export const removeStaffSuccess = createAction(
     '[Staff/API] Remove Staff Success',
-    props<{ staffid: number }>(),
+    props<{ staffId: number }>(),
 );
 export const removeStaffFailure = createAction(
     '[Staff/API] Remove Staff Failure',

@@ -36,6 +36,6 @@ export const reducer = createReducer(
     on(
         BrandsActions.removeBrand,
         BrandssApiActions.removeBrandSuccess,
-        (state, { brand_id }) => brandAdapter.removeOne(brand_id, state),
+        (state, { brandId }) => brandAdapter.removeOne(brandId, state),
     ),
 );

@@ -29,5 +29,5 @@ export const deleteBrand = createAction(
 
 export const removeBrand = createAction(
     '[Brand/API] Remove Brand',
-    props<{ brand_id: number }>(),
+    props<{ brandId: number }>(),
 );

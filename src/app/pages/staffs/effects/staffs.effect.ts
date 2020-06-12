@@ -60,13 +60,13 @@ export class StaffsEffect {
     ));
     remove$ = createEffect(() => this.action$.pipe(
         ofType(StaffsActions.removeStaff),
-        switchMap(({ staffid }) => {
-            if (staffid <= 0) {
+        switchMap(({ staffId }) => {
+            if (staffId <= 0) {
                 return empty;
             }
-            return this.staffsService.remove_staff(staffid).pipe(
+            return this.staffsService.remove_staff(staffId).pipe(
                 map((item: IStaff) =>
-                    StaffsApiActions.removeStaffSuccess({ staffid: item ? item.staffId : 0 })),
+                    StaffsApiActions.removeStaffSuccess({ staffId: item ? item.staffId : 0 })),
                 catchError(err => of(
                     StaffsApiActions.removeStaffFailure({ errorMsg: err.message }))),
             );

@@ -69,4 +69,12 @@ export class CategoriesSmartTableComponent implements OnInit {
   navigateToCategoryDetail(event) {
     this.route.navigate(['pages/categories/category', event.data.categoryId]);
   }
+  delete(event) {
+    if (window.confirm('Are you sure you want to delete Category:' + event.data.categoryId + '?')) {
+      this.store.dispatch(CategoriesActions.removeCategory({ categoryId: event.data.categoryId }));
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
 }

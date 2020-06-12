@@ -24,7 +24,7 @@ namespace phoneserver.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Categories>>> GetCategories()
         {
-            return await _context.Categories.ToListAsync();
+            return await _context.Categories.Where(x => x.Deleted == false).ToListAsync();
         }
 
         // GET: api/Categories/5
@@ -96,8 +96,8 @@ namespace phoneserver.Controllers
             {
                 return NotFound();
             }
-
-            _context.Categories.Remove(categories);
+            categories.LastUpdatedDateTime = DateTime.Now;
+            categories.Deleted = true;
             await _context.SaveChangesAsync();
 
             return categories;

@@ -37,7 +37,13 @@ export class StaffsSmartTableComponent implements OnInit {
         editable: false,
       },
       email: {
-        title: 'email',
+        title: 'Email',
+        filter: true,
+        type: 'string',
+        editable: true,
+      },
+      status: {
+        title: 'Status',
         filter: true,
         type: 'string',
         editable: true,
@@ -63,5 +69,13 @@ export class StaffsSmartTableComponent implements OnInit {
   }
   navigateToStaffDetail(event) {
     this.route.navigate(['pages/staffs/staff/', event.data.staffId]);
+  }
+  delete(event) {
+    if (window.confirm('Are you sure you want to delete Staff:' + event.data.staffId + '?')) {
+      this.store.dispatch(StaffsActions.removeStaff({ staffId: event.data.staffId }));
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
   }
 }

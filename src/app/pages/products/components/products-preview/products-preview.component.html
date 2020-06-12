@@ -10,9 +10,19 @@
             [(ngModel)]="product.productName">
     </div>
     <div class="col-xs-6 col-md-6">
+        <label>Product Model Year</label>
+        <input type="text" name="modelYear" class="form-control" placeholder="Product Model Year" nbInput readonly
+            [(ngModel)]="product.modelYear">
+    </div>
+    <div class="col-xs-6 col-md-6">
         <label>Product Description</label>
         <input type="text" name="description" class="form-control" placeholder="Description" nbInput readonly
             [(ngModel)]="product.description">
+    </div>
+    <div class="col-xs-6 col-md-6">
+        <label>Product Price</label>
+        <input type="text" name="price" class="form-control" placeholder="Price" nbInput readonly
+            [(ngModel)]="product.price">
     </div>
 </div>
 <div class="row">

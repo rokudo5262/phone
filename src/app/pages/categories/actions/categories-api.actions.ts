@@ -60,7 +60,7 @@ export const deleteCategoryFailure = createAction(
  */
 export const removeCategorySuccess = createAction(
   '[Category/API] Remove Category Success',
-  props<{ category_id: number }>(),
+  props<{ categoryId: number }>(),
 );
 export const removeCategoryFailure = createAction(
   '[Category/API] Remove Category Failure',

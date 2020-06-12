@@ -61,13 +61,13 @@ export class BrandsEffect {
     ));
     remove$ = createEffect(() => this.action$.pipe(
         ofType(BrandsActions.removeBrand),
-        switchMap(({ brand_id }) => {
-            if (brand_id <= 0) {
+        switchMap(({ brandId }) => {
+            if (brandId <= 0) {
                 return empty;
             }
-            return this.bransService.remove_brand(brand_id).pipe(
+            return this.bransService.remove_brand(brandId).pipe(
                 map((item: IBrand) =>
-                    BrandssApiActions.removeBrandSuccess({ brand_id: item ? item.brandId : 0 })),
+                    BrandssApiActions.removeBrandSuccess({ brandId: item ? item.brandId : 0 })),
                 catchError(err => of(
                     BrandssApiActions.removeBrandFailure({ errorMsg: err.message }))),
             );

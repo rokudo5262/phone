@@ -29,5 +29,5 @@ export const deleteStaff = createAction(
 
 export const removeStaff = createAction(
     '[Staff/API] Remove Staff',
-    props<{ staffid: number }>(),
+    props<{ staffId: number }>(),
 );

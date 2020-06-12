@@ -24,8 +24,7 @@ namespace phoneserver.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Brands>>> GetBrands()
         {
-
-            return await _context.Brands.ToListAsync();
+            return await _context.Brands.Where(x => x.Deleted == false).ToListAsync();
         }
 
         // GET: api/Brands/5
@@ -97,8 +96,8 @@ namespace phoneserver.Controllers
             {
                 return NotFound();
             }
-
-            _context.Brands.Remove(brands);
+            brands.LastUpdatedDateTime = DateTime.Now;
+            brands.Deleted = true;
             await _context.SaveChangesAsync();
 
             return brands;

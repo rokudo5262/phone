@@ -74,4 +74,12 @@ export class OrdersSmartTableComponent implements OnInit {
   navigateToOrderDetail(event) {
     this.route.navigate(['pages/orders/order/', event.data.orderId]);
   }
+  delete(event) {
+    if (window.confirm('Are you sure you want to delete Order:' + event.data.orderId + '?')) {
+      this.store.dispatch(OrdersActions.removeOrder({ orderId: event.data.orderId }));
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
 }

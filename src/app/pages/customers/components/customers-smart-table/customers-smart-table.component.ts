@@ -73,4 +73,12 @@ export class CustomersSmartTableComponent implements OnInit {
   navigateToCustomerDetail(event) {
     this.route.navigate(['pages/customers/customer/', event.data.customerId]);
   }
+  delete(event) {
+    if (window.confirm('Are you sure you want to delete Customer:' + event.data.customerId + '?')) {
+      this.store.dispatch(CustomersActions.removeCustomer({ customerId: event.data.customerId }));
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
 }

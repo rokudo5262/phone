@@ -76,4 +76,12 @@ export class ProductsSmartTableComponent implements OnInit {
   navigateToProductDetail(event) {
     this.route.navigate(['pages/products/product/', event.data.productId]);
   }
+  delete(event) {
+    if (window.confirm('Are you sure you want to delete Product:' + event.data.productId + '?')) {
+      this.store.dispatch(ProductsActions.removeProduct({ productId: event.data.productId }));
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
 }

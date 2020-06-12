@@ -4,18 +4,36 @@
         <input type="text" name="customerId" class="form-control" placeholder="Customer Id" nbInput readonly
             [(ngModel)]="customer.customerId">
     </div>
-    <!-- <div class="col-xs-6 col-md-6">
-        <label>Category Name</label>
-        <input type="text" name="categoryName" class="form-control" placeholder="Category Name" nbInput readonly
-            [(ngModel)]="category.categoryName">
-    </div> -->
+    <div class="col-xs-6 col-md-6">
+        <label>Customer Email</label>
+        <input type="text" name="email" class="form-control" placeholder="Customer Email" nbInput readonly
+            [(ngModel)]="customer.email">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-4 col-md-4">
+        <label>Customer firstname</label>
+        <input type="text" name="firstname" class="form-control" placeholder="Customer firstname" nbInput readonly
+            [(ngModel)]="customer.firstname">
+    </div>
+    <div class="col-xs-4 col-md-4">
+        <label>Customer middlename</label>
+        <input type="text" name="middlename" class="form-control" placeholder="Customer middlename" nbInput readonly
+            [(ngModel)]="customer.middlename">
+    </div>
+    <div class="col-xs-4 col-md-4">
+        <label>Customer lastname</label>
+        <input type="text" name="lastname" class="form-control" placeholder="Customer lastname" nbInput readonly
+            [(ngModel)]="customer.lastname">
+    </div>
+</div>
+<div class="row">
     <div class="col-xs-6 col-md-6">
         <label>Customer Remark</label>
         <input type="text" name="remark" class="form-control" placeholder="Remark" nbInput readonly
             [(ngModel)]="customer.remark">
     </div>
-</div>
-<div class="row">
     <div class="col-xs-6 col-md-6">
         <label>Customer Status</label>
         <input type="text" name="status" class="form-control" placeholder="Status" nbInput readonly

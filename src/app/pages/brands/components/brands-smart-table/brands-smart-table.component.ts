@@ -73,4 +73,12 @@ export class BrandsSmartTableComponent implements OnInit {
   navigateToBrandDetail(event) {
     this.route.navigate(['pages/brands/brand/', event.data.brandId]);
   }
+  delete(event) {
+    if (window.confirm('Are you sure you want to delete Brand:' + event.data.brandId + '?')) {
+      this.store.dispatch(BrandsActions.removeBrand({ brandId: event.data.brandId }));
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
 }

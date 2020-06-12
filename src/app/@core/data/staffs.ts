@@ -4,7 +4,7 @@ export interface IStaff {
     staffId: number;
     managerId: number;
     storeId: number;
-    emai: string;
+    email: string;
     password: string;
     firstname: string;
     middlename: string;

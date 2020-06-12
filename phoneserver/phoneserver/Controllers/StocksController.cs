@@ -24,7 +24,7 @@ namespace phoneserver.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Stocks>>> GetStocks()
         {
-            return await _context.Stocks.ToListAsync();
+            return await _context.Stocks.Where(x => x.Deleted == false).ToListAsync();
         }
 
         // GET: api/Stocks/5
@@ -96,8 +96,8 @@ namespace phoneserver.Controllers
             {
                 return NotFound();
             }
-
-            _context.Stocks.Remove(stocks);
+            stocks.LastUpdatedDateTime = DateTime.Now;
+            stocks.Deleted = true;
             await _context.SaveChangesAsync();
 
             return stocks;

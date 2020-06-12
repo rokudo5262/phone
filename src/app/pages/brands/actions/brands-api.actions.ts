@@ -60,7 +60,7 @@ export const deleteBrandFailure = createAction(
  */
 export const removeBrandSuccess = createAction(
     '[Brand/API] Remove Brand Success',
-    props<{ brand_id: number }>(),
+    props<{ brandId: number }>(),
 );
 export const removeBrandFailure = createAction(
     '[Brand/API] Remove Brand Failure',

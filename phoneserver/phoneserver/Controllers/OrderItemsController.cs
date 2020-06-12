@@ -24,7 +24,7 @@ namespace phoneserver.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<OrderItems>>> GetOrderItems()
         {
-            return await _context.OrderItems.ToListAsync();
+            return await _context.OrderItems.Where(x => x.Deleted == false).ToListAsync();
         }
 
         // GET: api/OrderItems/5

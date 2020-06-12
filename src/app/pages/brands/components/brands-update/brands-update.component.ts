@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IBrand } from '../../../../@core/data/brands';
+import { Store } from '@ngrx/store';
+import { BrandsActions } from '../../actions';
 
 @Component({
   selector: 'ngx-brands-update',
@@ -9,17 +11,18 @@ import { IBrand } from '../../../../@core/data/brands';
   templateUrl: './brands-update.component.html',
 })
 export class BrandsUpdateComponent implements OnInit {
-  public updateBrandorm: FormGroup;
+  public updateBrandForm: FormGroup;
   public brand: IBrand;
   constructor(
     private fb: FormBuilder,
+    private store: Store<IBrand>,
     private dialogRef: NbDialogRef<BrandsUpdateComponent>,
   ) { }
   ngOnInit() {
     this.createForm();
   }
   createForm = () => {
-    this.updateBrandorm = this.fb.group({
+    this.updateBrandForm = this.fb.group({
       brandId: [this.brand ? this.brand.brandId : '', Validators.required],
       brandName: [this.brand ? this.brand.brandName : '', Validators.required],
       remark: [this.brand ? this.brand.remark : '', Validators.required],
@@ -33,5 +36,13 @@ export class BrandsUpdateComponent implements OnInit {
   }
   close() {
     this.dialogRef.close();
+  }
+  save(item) {
+    const update = {
+      id: item.id,
+      changes: item
+    };
+    this.store.dispatch(BrandsActions.updateBrand({ update: update }));
+    this.close();
   }
 }

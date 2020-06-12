@@ -12,7 +12,7 @@ import { BrandsActions } from '../../actions';
 })
 export class BrandsAddComponent implements OnInit {
   public addBrandForm: FormGroup;
-  public category: IBrand;
+  public brand: IBrand;
   @Output() response: EventEmitter<any> = new EventEmitter();
   constructor(
     private fb: FormBuilder,

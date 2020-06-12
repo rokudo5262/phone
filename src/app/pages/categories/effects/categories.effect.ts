@@ -60,13 +60,13 @@ export class CategoriesEffects {
     ));
     remove$ = createEffect(() => this.action$.pipe(
         ofType(CategoriesActions.removeCategory),
-        switchMap(({ category_id }) => {
-            if (category_id <= 0) {
+        switchMap(({ categoryId }) => {
+            if (categoryId <= 0) {
                 return empty;
             }
-            return this.categoriesservice.remove_category(category_id).pipe(
+            return this.categoriesservice.remove_category(categoryId).pipe(
                 map((item: ICategory) => CategoriesApiActions
-                    .removeCategorySuccess({ category_id: item ? item.categoryId : 0 })),
+                    .removeCategorySuccess({ categoryId: item ? item.categoryId : 0 })),
                 catchError(err => of(CategoriesApiActions
                     .removeCategoryFailure({ errorMsg: err.message }))),
             );

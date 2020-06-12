@@ -29,5 +29,5 @@ export const deleteCategory = createAction(
 
 export const removeCategory = createAction(
   '[Category/API] Remove Category',
-  props<{ category_id: number }>(),
+  props<{ categoryId: number }>(),
 );

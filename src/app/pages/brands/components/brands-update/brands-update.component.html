@@ -5,9 +5,38 @@
         </div>
     </nb-card-header>
     <nb-card-body>
+        <form [formGroup]="updateBrandForm" method="POST">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <input type="hidden" formControlName="brandId" class="form-control" name="brandId">
+                    <input type="hidden" formControlName="createdBy" class="form-control" name="createdBy">
+                    <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy">
+                    <input type="hidden" formControlName="createdDateTime" class="form-control" name="createdDateTime">
+                    <input type="hidden" formControlName="createdDateTime" class="form-control" name="lastUpdatedBy">
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <label>Brand Name</label>
+                    <input type="text" name="brandName" formControlName="brandName" class="form-control"
+                        placeholder="brandName">
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <label>Brand Remark</label>
+                    <input type="text" name="note" formControlName="remark" class="form-control" placeholder="remark">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <label>Brand Status</label>
+                    <nb-select placeholder="Status" formControlName="status" name="status" fullWidth>
+                        <nb-option value="On">On</nb-option>
+                        <nb-option value="Off">Off</nb-option>
+                    </nb-select>
+                </div>
+            </div>
+        </form>
     </nb-card-body>
     <nb-card-footer>
-        <button nbButton outline status="success" (click)="close()">Save</button>
-        <button nbButton outline status="danger"  (click)="close()">Cancel</button>
+        <button nbButton outline status="success" (click)="save(updateBrandForm.value)">Save</button>
+        <button nbButton outline status="danger" (click)="close()">Cancel</button>
     </nb-card-footer>
 </nb-card>

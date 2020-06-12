@@ -69,4 +69,12 @@ export class StoresSmartTableComponent implements OnInit {
   navigateToStoreDetail(event) {
     this.route.navigate(['pages/stores/store/', event.data.storeId]);
   }
+  delete(event) {
+    if (window.confirm('Are you sure you want to delete Store:' + event.data.storeId + '?')) {
+      this.store.dispatch(StoresActions.removeStore({ storeId: event.data.storeId }));
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
 }
