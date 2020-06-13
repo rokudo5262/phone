@@ -42,6 +42,11 @@ export class CategoriesSmartTableComponent implements OnInit {
         type: 'string',
         editable: true,
       },
+      remark: {
+        title: 'Remark',
+        type: 'string',
+        editable: true,
+      },
       status: {
         title: 'Status',
         type: 'string',

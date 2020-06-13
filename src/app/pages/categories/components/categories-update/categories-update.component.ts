@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { NbDialogRef } from '@nebular/theme';
 import { ICategory } from '../../../../@core/data';
+import { CategoriesActions } from '../../actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'ngx-categories-update',
@@ -10,9 +12,10 @@ import { ICategory } from '../../../../@core/data';
 })
 export class CategoriesUpdateComponent implements OnInit {
   public updateCategoryForm: FormGroup;
-  public category: ICategory;
+  @Input() category: ICategory;
   constructor(
     private fb: FormBuilder,
+    private store: Store<ICategory>,
     private dialogRef: NbDialogRef<CategoriesUpdateComponent>,
   ) { }
   ngOnInit() {
@@ -33,5 +36,13 @@ export class CategoriesUpdateComponent implements OnInit {
   }
   close() {
     this.dialogRef.close();
+  }
+  save(item) {
+    const update = {
+      id: item.categoryId,
+      changes: item,
+    };
+    this.store.dispatch(CategoriesActions.updateCategory({ update: update }));
+    this.close();
   }
 }

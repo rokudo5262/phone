@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IBrand } from '../../../../@core/data/brands';
@@ -12,7 +12,7 @@ import { BrandsActions } from '../../actions';
 })
 export class BrandsUpdateComponent implements OnInit {
   public updateBrandForm: FormGroup;
-  public brand: IBrand;
+  @Input() brand: IBrand;
   constructor(
     private fb: FormBuilder,
     private store: Store<IBrand>,
@@ -39,7 +39,7 @@ export class BrandsUpdateComponent implements OnInit {
   }
   save(item) {
     const update = {
-      id: item.id,
+      id: item.brandId,
       changes: item,
     };
     this.store.dispatch(BrandsActions.updateBrand({ update: update }));

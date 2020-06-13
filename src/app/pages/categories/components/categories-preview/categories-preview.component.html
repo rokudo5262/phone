@@ -1,24 +1,31 @@
-<div class="row">
-    <div class="col-xs-6 col-md-6">
-        <label>Category Id</label>
-        <input type="text" name="categoryId" class="form-control" placeholder="Category Id" nbInput readonly
-            [(ngModel)]="category.categoryId">
+<nb-card-body>
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            <label>Category Id</label>
+            <input type="text" name="categoryId" class="form-control" placeholder="Category Id" nbInput readonly
+                [(ngModel)]="category.categoryId">
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <label>Category Name</label>
+            <input type="text" name="categoryName" class="form-control" placeholder="Category Name" nbInput readonly
+                [(ngModel)]="category.categoryName">
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <label>Category Remark</label>
+            <input type="text" name="remark" class="form-control" placeholder="Remark" nbInput readonly
+                [(ngModel)]="category.remark">
+        </div>
     </div>
-    <div class="col-xs-6 col-md-6">
-        <label>Category Name</label>
-        <input type="text" name="categoryName" class="form-control" placeholder="Category Name" nbInput readonly
-            [(ngModel)]="category.categoryName">
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            <label>Category Status</label>
+            <input type="text" name="status" class="form-control" placeholder="Status" nbInput readonly
+                [(ngModel)]="category.status">
+        </div>
     </div>
-    <div class="col-xs-6 col-md-6">
-        <label>Category Remark</label>
-        <input type="text" name="remark" class="form-control" placeholder="Remark" nbInput readonly
-            [(ngModel)]="category.remark">
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-6 col-md-6">
-        <label>Category Status</label>
-        <input type="text" name="status" class="form-control" placeholder="Status" nbInput readonly
-            [(ngModel)]="category.status">
-    </div>
-</div>
+</nb-card-body>
+<nb-card-footer>
+    <button nbButton outline status="success" (click)="update()">Update</button>
+    <button nbButton outline status="danger" (click)="delete()">Delete</button>
+    <button nbButton outline status="warning" (click)="back()">Back</button>
+</nb-card-footer>

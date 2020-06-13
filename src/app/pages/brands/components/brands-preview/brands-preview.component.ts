@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IBrand } from '../../../../@core/data/brands';
+import { Router } from '@angular/router';
+import { NbDialogService } from '@nebular/theme';
+import { BrandsUpdateComponent } from '../brands-update/brands-update.component';
+import { BrandsActions } from '../../actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'ngx-brands-preview',
@@ -10,7 +15,22 @@ import { IBrand } from '../../../../@core/data/brands';
 export class BrandsPreviewComponent implements OnInit {
   @Input() brand: IBrand;
   constructor(
+    private route: Router,
+    private store: Store<IBrand>,
+    private dialogService: NbDialogService,
   ) { }
   ngOnInit() {
+  }
+  update() {
+    this.dialogService.open(BrandsUpdateComponent, {
+      context: {
+        brand: this.brand,
+      }
+    });
+  }
+  delete() {
+  }
+  back() {
+    this.route.navigate(['pages/brands/library']);
   }
 }

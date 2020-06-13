@@ -4,12 +4,5 @@
             <label>Category Detail</label>
         </div>
     </nb-card-header>
-    <nb-card-body>
-        <ngx-categories-preview [category]="category$ | async" ></ngx-categories-preview>
-    </nb-card-body>
-    <nb-card-footer>
-        <button nbButton outline status="success" (click)="update()">Update</button>
-        <button nbButton outline status="danger" (click)="delete()">Delete</button>
-        <button nbButton outline status="warning" (click)="back()">Back</button>
-    </nb-card-footer>
+    <ngx-categories-preview [category]="category$ | async"></ngx-categories-preview>
 </nb-card>

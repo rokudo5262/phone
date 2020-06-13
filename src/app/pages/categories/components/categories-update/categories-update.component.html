@@ -5,9 +5,39 @@
       </div>
   </nb-card-header>
   <nb-card-body>
+    <form [formGroup]="updateCategoryForm" method="POST">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <input type="hidden" formControlName="categoryId" class="form-control" name="categoryId">
+                <input type="hidden" formControlName="createdBy" class="form-control" name="createdBy">
+                <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy">
+                <input type="hidden" formControlName="createdDateTime" class="form-control" name="createdDateTime">
+                <input type="hidden" formControlName="createdDateTime" class="form-control" name="lastUpdatedBy">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Category Name</label>
+                <input type="text" name="categoryName" formControlName="categoryName" class="form-control"
+                    placeholder="Category Name" nbInput>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Category Remark</label>
+                <input type="text" name="remark" formControlName="remark" class="form-control" placeholder="Remark"
+                    nbInput>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+                <label>Category Status</label>
+                <nb-select placeholder="Status" formControlName="status" name="status" fullWidth>
+                    <nb-option value="On">On</nb-option>
+                    <nb-option value="Off">Off</nb-option>
+                </nb-select>
+            </div>
+        </div>
+    </form>
   </nb-card-body>
   <nb-card-footer>
-      <button nbButton outline status="success" (click)="close()">Save</button>
+      <button nbButton outline status="success" (click)="save(updateCategoryForm.value)">Save</button>
       <button nbButton outline status="danger"  (click)="close()">Cancel</button>
   </nb-card-footer>
 </nb-card>

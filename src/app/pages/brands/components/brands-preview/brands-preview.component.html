@@ -1,24 +1,31 @@
-<div class="row">
-    <div class="col-xs-6 col-md-6">
-        <label>Brand Id</label>
-        <input type="text" name="brandId" class="form-control" placeholder="Brand Id" nbInput readonly
-            [(ngModel)]="brand.brandId">
+<nb-card-body>
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            <label>Brand Id</label>
+            <input type="text" name="brandId" class="form-control" placeholder="Brand Id" nbInput readonly
+                [(ngModel)]="brand.brandId">
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <label>Brand Name</label>
+            <input type="text" name="brandName" class="form-control" placeholder="Brand Name" nbInput readonly
+                [(ngModel)]="brand.brandName">
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <label>Brand Remark</label>
+            <input type="text" name="remark" class="form-control" placeholder="Remark" nbInput readonly
+                [(ngModel)]="brand.remark">
+        </div>
     </div>
-    <div class="col-xs-6 col-md-6">
-        <label>Brand Name</label>
-        <input type="text" name="brandName" class="form-control" placeholder="Brand Name" nbInput readonly
-            [(ngModel)]="brand.brandName">
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            <label>Brand Status</label>
+            <input type="text" name="status" class="form-control" placeholder="status" nbInput readonly
+                [(ngModel)]="brand.status">
+        </div>
     </div>
-    <div class="col-xs-6 col-md-6">
-        <label>Brand Remark</label>
-        <input type="text" name="remark" class="form-control" placeholder="Remark" nbInput readonly
-            [(ngModel)]="brand.remark">
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-6 col-md-6">
-        <label>Brand Status</label>
-        <input type="text" name="status" class="form-control" placeholder="status" nbInput readonly
-            [(ngModel)]="brand.status">
-    </div>
-</div>
+</nb-card-body>
+<nb-card-footer>
+    <button nbButton outline status="success" (click)="update()">Update</button>
+    <button nbButton outline status="danger" (click)="delete()">Delete</button>
+    <button nbButton outline status="warning" (click)="back()">Back</button>
+</nb-card-footer>
