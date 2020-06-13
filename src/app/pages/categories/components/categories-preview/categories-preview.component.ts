@@ -22,7 +22,7 @@ export class CategoriesPreviewComponent implements OnInit {
     this.dialogService.open(CategoriesUpdateComponent, {
       context: {
         category: this.category,
-      }
+      },
     });
   }
   delete() {
