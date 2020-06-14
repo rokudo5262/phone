@@ -51,7 +51,7 @@ namespace phoneserver.Controllers
             {
                 return BadRequest();
             }
-
+            categories.LastUpdatedDateTime = DateTime.Now;
             _context.Entry(categories).State = EntityState.Modified;
 
             try

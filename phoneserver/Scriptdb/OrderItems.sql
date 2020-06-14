@@ -9,12 +9,12 @@ GO
 
 CREATE TABLE [dbo].[OrderItems](
 	[item_id][int] IDENTITY(1,1) not null PRIMARY KEY,
-	[order_id][int],
-	[product_id][int],
-	[quantity][int],
-	[list_price][int],
-	[discount][int],
-	[deleted] [bit] NULL,
+	[order_id][int] NOT NULL,
+	[product_id][int] NOT NULL,
+	[quantity][int] NULL,
+	[list_price][int] NULL,
+	[discount][int] NULL,
+	[deleted] [bit] NOT NULL,
   [status][nvarchar](255) NULL,
 	[remark][nvarchar](255) NULL,
 	[createdBy] [nvarchar] (255) null,
@@ -30,8 +30,6 @@ INSERT INTO [OrderItems]( order_id,product_id,quantity,deleted)
    ('2','1','1','0'),
    ('2','1','1','0');
 
-ALTER TABLE [dbo].[OrderItems] ADD  CONSTRAINT [DF_OrderItems_deleted]  DEFAULT ((0)) FOR [deleted]
-GO
 ALTER TABLE [dbo].[OrderItems] ADD  CONSTRAINT [DF_OrderItems_deleted]  DEFAULT ((0)) FOR [deleted]
 GO
 

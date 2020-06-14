@@ -31,7 +31,7 @@ CREATE TABLE [dbo].[Staffs](
 	[identityCardPlace] [nvarchar](255) NULL,
 	[identityCardDate] [datetime] NULL,
 	[identityCardAddress] [nvarchar](255) NULL,
-	[deleted] [bit] NULL,
+	[deleted] [bit] NOT NULL,
 	[status] [nvarchar](255) NULL,
 	[remark] [nvarchar](255) NULL,
 	[createdBy] [nvarchar] (255) null,

@@ -9,10 +9,10 @@ GO
 
 CREATE TABLE [dbo].[Stocks](
 	[stock_id] [int] IDENTITY(1,1) not null PRIMARY KEY,
-  [store_id] [int]null,
-	[product_id][int]null,
-  [quantity][int]null,
-	[deleted] [bit] NULL,
+  [store_id] [int] null,
+	[product_id][int] null,
+  [quantity][int] null,
+	[deleted] [bit] NOT NULL,
   [status][nvarchar](255) NULL,
 	[remark][nvarchar](255) NULL,
 	[createdBy] [nvarchar] (255) null,

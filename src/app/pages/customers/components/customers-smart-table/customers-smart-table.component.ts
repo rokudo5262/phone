@@ -15,12 +15,7 @@ export class CustomersSmartTableComponent implements OnInit {
   settings = {
     hideSubHeader: false,
     // selectMode: 'multi',
-    edit: {
-      editButtonContent: '<i class="nb-compose"></i>',
-      // editButtonContent: '<i class="nb-edit"></i>',
-      // saveButtonContent: '<i class="nb-checkmark"></i>',
-      // cancelButtonContent: '<i class="nb-close"></i>',,
-    },
+    mode: 'inline',
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,

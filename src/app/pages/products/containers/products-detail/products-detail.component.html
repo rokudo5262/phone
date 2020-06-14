@@ -2,14 +2,7 @@
   <nb-card-header>
     <div class="title">
       <label>Product Detail</label>
-  </div>
+    </div>
   </nb-card-header>
-  <nb-card-body>
-    <ngx-products-preview [product]="product$ | async"></ngx-products-preview>
-  </nb-card-body>
-  <nb-card-footer>
-      <button nbButton outline status="success" (click)="update()">Update</button>
-      <button nbButton outline status="danger" (click)="delete()">Delete</button>
-      <button nbButton outline status="warning" (click)="back()">Back</button>
-  </nb-card-footer>
+  <ngx-products-preview [product]="product$ | async"></ngx-products-preview>
 </nb-card>

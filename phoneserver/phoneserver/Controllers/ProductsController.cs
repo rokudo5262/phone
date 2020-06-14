@@ -51,9 +51,8 @@ namespace phoneserver.Controllers
             {
                 return BadRequest();
             }
-
+            products.LastUpdatedDateTime = DateTime.Now;
             _context.Entry(products).State = EntityState.Modified;
-
             try
             {
                 await _context.SaveChangesAsync();
@@ -79,11 +78,10 @@ namespace phoneserver.Controllers
         [HttpPost]
         public async Task<ActionResult<Products>> PostProducts(Products products)
         {
-      products.LastUpdatedDateTime = DateTime.Now;
-      products.CreatedDateTime = DateTime.Now;
-      _context.Products.Add(products);
+            products.LastUpdatedDateTime = DateTime.Now;
+            products.CreatedDateTime = DateTime.Now;
+            _context.Products.Add(products);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction("GetProducts", new { id = products.ProductId }, products);
         }
 

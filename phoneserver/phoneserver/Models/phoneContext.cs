@@ -10,7 +10,7 @@ namespace phoneserver.Models
         : base(options)
     {
     }
-    public virtual DbSet<Brands> Brands { get; set; }
+        public virtual DbSet<Brands> Brands { get; set; }
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<OrderItems> OrderItems { get; set; }

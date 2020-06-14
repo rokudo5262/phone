@@ -18,7 +18,7 @@ CREATE TABLE [dbo].[Stores](
 	[city][nvarchar](255) NULL,
 	[country][nvarchar](255) NULL,
 	[zip_code][nvarchar](255) NULL,
-	[deleted] [bit] NULL,
+	[deleted] [bit] NOT NULL,
 	[status][nvarchar](255) NULL,
 	[remark][nvarchar](255) NULL,
 	[createdBy] [nvarchar] (255) null,

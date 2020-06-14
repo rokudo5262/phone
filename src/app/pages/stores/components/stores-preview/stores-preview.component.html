@@ -1,3 +1,4 @@
+<nb-card-body>
 <div class="row">
     <div class="col-xs-6 col-md-6">
         <label>Store Id</label>
@@ -15,3 +16,9 @@
             [(ngModel)]="store.status">
     </div>
 </div>
+</nb-card-body>
+<nb-card-footer>
+    <button nbButton outline status="success" (click)="update()">Update</button>
+    <button nbButton outline status="danger" (click)="delete()">Delete</button>
+    <button nbButton outline status="warning" (click)="back()">Back</button>
+</nb-card-footer>

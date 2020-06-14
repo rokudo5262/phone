@@ -2,14 +2,14 @@
   <nb-card-header>
     <div class="title">
       <label>Order Detail</label>
-  </div>
+    </div>
   </nb-card-header>
-  <nb-card-body>
-    <ngx-orders-preview [order]="order$ | async"></ngx-orders-preview>
-  </nb-card-body>
-  <nb-card-footer>
-      <button nbButton outline status="success" (click)="update()">Update</button>
-      <button nbButton outline status="danger" (click)="delete()">Delete</button>
-      <button nbButton outline status="warning" (click)="back()">Back</button>
-  </nb-card-footer>
+  <nb-tabset>
+    <nb-tab>
+      <ngx-orders-preview [order]="order$ | async"></ngx-orders-preview>
+    </nb-tab>
+    <nb-tab>
+      <ngx-orders-preview [order]="order$ | async"></ngx-orders-preview>
+    </nb-tab>
+  </nb-tabset>
 </nb-card>

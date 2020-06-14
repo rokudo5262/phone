@@ -12,7 +12,7 @@ CREATE TABLE [dbo].[Brands](
 	[brand_name] [nvarchar](255) NULL,
 	[status][nvarchar](255) NULL,
 	[remark][nvarchar](255) NULL,
-	[deleted] [bit] NULL,
+	[deleted] [bit] NOT NULL,
 	[createdBy] [nvarchar] (255) null,
 	[createdDateTime] [datetime] null,
 	[lastUpdatedBy] [nvarchar] (255) null,

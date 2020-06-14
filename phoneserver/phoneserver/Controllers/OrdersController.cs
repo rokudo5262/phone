@@ -24,7 +24,7 @@ namespace phoneserver.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Orders>>> GetOrders()
         {
-            return await _context.Orders.Where(x => x.Deleted == false).ToListAsync();
+          return await _context.Orders.Where(x => x.Deleted == false).ToListAsync();
         }
 
         // GET: api/Orders/5
@@ -51,7 +51,7 @@ namespace phoneserver.Controllers
             {
                 return BadRequest();
             }
-
+            orders.LastUpdatedDateTime = DateTime.Now;
             _context.Entry(orders).State = EntityState.Modified;
 
             try
@@ -79,11 +79,10 @@ namespace phoneserver.Controllers
         [HttpPost]
         public async Task<ActionResult<Orders>> PostOrders(Orders orders)
         {
-        orders.LastUpdatedDateTime = DateTime.Now;
-        orders.CreatedDateTime = DateTime.Now;
-        _context.Orders.Add(orders);
+            orders.LastUpdatedDateTime = DateTime.Now;
+            orders.CreatedDateTime = DateTime.Now;
+            _context.Orders.Add(orders);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction("GetOrders", new { id = orders.OrderId }, orders);
         }
 

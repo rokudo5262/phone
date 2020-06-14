@@ -51,7 +51,7 @@ namespace phoneserver.Controllers
             {
                 return BadRequest();
             }
-
+            stores.LastUpdatedDateTime = DateTime.Now;
             _context.Entry(stores).State = EntityState.Modified;
 
             try
@@ -79,11 +79,10 @@ namespace phoneserver.Controllers
         [HttpPost]
         public async Task<ActionResult<Stores>> PostStores(Stores stores)
         {
-        stores.LastUpdatedDateTime = DateTime.Now;
-        stores.CreatedDateTime = DateTime.Now;
-        _context.Stores.Add(stores);
+            stores.LastUpdatedDateTime = DateTime.Now;
+            stores.CreatedDateTime = DateTime.Now;
+            _context.Stores.Add(stores);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction("GetStores", new { id = stores.StoreId }, stores);
         }
 

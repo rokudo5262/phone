@@ -1,34 +1,41 @@
-<div class="row">
-    <div class="col-xs-6 col-md-6">
-        <label>Product Id</label>
-        <input type="text" name="productId" class="form-control" placeholder="Product Id" nbInput readonly
-            [(ngModel)]="product.productId">
+<nb-card-body>
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            <label>Product Id</label>
+            <input type="text" name="productId" class="form-control" placeholder="Product Id" nbInput readonly
+                [(ngModel)]="product.productId">
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <label>Product Name</label>
+            <input type="text" name="productName" class="form-control" placeholder="Product Name" nbInput readonly
+                [(ngModel)]="product.productName">
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <label>Product Model Year</label>
+            <input type="text" name="modelYear" class="form-control" placeholder="Product Model Year" nbInput readonly
+                [(ngModel)]="product.modelYear">
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <label>Product Description</label>
+            <input type="text" name="description" class="form-control" placeholder="Description" nbInput readonly
+                [(ngModel)]="product.description">
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <label>Product Price</label>
+            <input type="text" name="price" class="form-control" placeholder="Price" nbInput readonly
+                [(ngModel)]="product.price">
+        </div>
     </div>
-    <div class="col-xs-6 col-md-6">
-        <label>Product Name</label>
-        <input type="text" name="productName" class="form-control" placeholder="Product Name" nbInput readonly
-            [(ngModel)]="product.productName">
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            <label>Product Status</label>
+            <input type="text" name="status" class="form-control" placeholder="Status" nbInput readonly
+                [(ngModel)]="product.status">
+        </div>
     </div>
-    <div class="col-xs-6 col-md-6">
-        <label>Product Model Year</label>
-        <input type="text" name="modelYear" class="form-control" placeholder="Product Model Year" nbInput readonly
-            [(ngModel)]="product.modelYear">
-    </div>
-    <div class="col-xs-6 col-md-6">
-        <label>Product Description</label>
-        <input type="text" name="description" class="form-control" placeholder="Description" nbInput readonly
-            [(ngModel)]="product.description">
-    </div>
-    <div class="col-xs-6 col-md-6">
-        <label>Product Price</label>
-        <input type="text" name="price" class="form-control" placeholder="Price" nbInput readonly
-            [(ngModel)]="product.price">
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-6 col-md-6">
-        <label>Product Status</label>
-        <input type="text" name="status" class="form-control" placeholder="Status" nbInput readonly
-            [(ngModel)]="product.status">
-    </div>
-</div>
+</nb-card-body>
+<nb-card-footer>
+    <button nbButton outline status="success" (click)="update()">Update</button>
+    <button nbButton outline status="danger" (click)="delete()">Delete</button>
+    <button nbButton outline status="warning" (click)="back()">Back</button>
+</nb-card-footer>

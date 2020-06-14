@@ -11,7 +11,7 @@ GO
 CREATE TABLE [dbo].[Categories](
 	[category_id] [int] IDENTITY(1,1) not null PRIMARY KEY,
 	[category_name] [nvarchar](255) NULL,
-	[deleted] [bit] NULL,
+	[deleted] [bit] NOT NULL,
   [status][nvarchar](255) NULL,
 	[remark][nvarchar](255) NULL,
 	[createdBy] [nvarchar] (255) null,

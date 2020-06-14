@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[Products](
   [price][nvarchar] (255)  null,
 	[description] [nvarchar] (255)  null,
   [status][nvarchar] (255)  null,
-  [deleted] [bit] null,
+  [deleted] [bit] NOT null,
 	[createdBy] [nvarchar] (255) null,
 	[createdDateTime] [datetime] null,
 	[lastUpdatedBy] [nvarchar] (255) null,
