@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,7 +24,7 @@ namespace phoneserver.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<OrderItems>>> GetOrderItems()
         {
-            return await _context.OrderItems.ToListAsync();
+            return await _context.OrderItems.Where(x => x.Deleted == false).ToListAsync();
         }
 
         // GET: api/OrderItems/5
@@ -51,7 +51,7 @@ namespace phoneserver.Controllers
             {
                 return BadRequest();
             }
-
+            orderItems.LastUpdatedDateTime = DateTime.Now;
             _context.Entry(orderItems).State = EntityState.Modified;
 
             try
@@ -79,6 +79,8 @@ namespace phoneserver.Controllers
         [HttpPost]
         public async Task<ActionResult<OrderItems>> PostOrderItems(OrderItems orderItems)
         {
+            orderItems.LastUpdatedDateTime = DateTime.Now;
+            orderItems.CreatedDateTime = DateTime.Now;
             _context.OrderItems.Add(orderItems);
             await _context.SaveChangesAsync();
 
@@ -94,8 +96,8 @@ namespace phoneserver.Controllers
             {
                 return NotFound();
             }
-
-            _context.OrderItems.Remove(orderItems);
+            orderItems.LastUpdatedDateTime = DateTime.Now;
+            orderItems.Deleted = true;
             await _context.SaveChangesAsync();
 
             return orderItems;

@@ -33,6 +33,7 @@ import { OrdersUpdateComponent } from './components';
 import { ThemeModule } from '../../@theme/theme.module';
 import { environment } from '../../../environments/environment.prod';
 import { OrdersPreviewComponent } from './components/orders-preview/orders-preview.component';
+import { OrderItemsSmartTableComponent } from './components/order-items-smart-table/order-items-smart-table.component';
 
 @NgModule({
     imports: [
@@ -72,6 +73,7 @@ import { OrdersPreviewComponent } from './components/orders-preview/orders-previ
         OrdersUpdateComponent,
         OrdersDetailComponent,
         OrdersPreviewComponent,
+        OrderItemsSmartTableComponent,
     ],
     entryComponents: [
         OrdersAddComponent,

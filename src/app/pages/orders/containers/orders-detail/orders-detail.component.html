@@ -5,10 +5,10 @@
     </div>
   </nb-card-header>
   <nb-tabset>
-    <nb-tab>
+    <nb-tab tabTitle="Order Detail">
       <ngx-orders-preview [order]="order$ | async"></ngx-orders-preview>
     </nb-tab>
-    <nb-tab>
+    <nb-tab tabTitle="Order Items List">
       <ngx-orders-preview [order]="order$ | async"></ngx-orders-preview>
     </nb-tab>
   </nb-tabset>

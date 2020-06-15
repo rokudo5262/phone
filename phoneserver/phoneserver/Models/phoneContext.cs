@@ -283,9 +283,8 @@ namespace phoneserver.Models
 
                 entity.Property(e => e.CustomerId).HasColumnName("customer_id");
 
-                entity.Property(e => e.Deleted)
-                    .HasColumnName("deleted")
-                    .HasDefaultValueSql("((0))");
+              entity.Property(e => e.Deleted)
+                  .HasColumnName("deleted");
 
                 entity.Property(e => e.Remark)
                     .HasColumnName("remark")

@@ -16,7 +16,7 @@ namespace phoneserver.Models
         public DateTime? ShippedDay { get; set; }
         public int StoreId { get; set; }
         public int StaffId { get; set; }
-        public bool? Deleted { get; set; }
+        public bool Deleted { get; set; }
         public string Status { get; set; }
         public string Remark { get; set; }
         public string CreatedBy { get; set; }
